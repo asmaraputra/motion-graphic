@@ -40,7 +40,7 @@ Sesudah keluarga dipilih, tanyakan gaya spesifik dalam keluarga itu bila lebih d
 ## Produksi dalam proyek ini
 
 - Ketujuh gaya ditawarkan sebagai arah visual Kerangka A dengan adaptasi. Pakai scaffold, timeline, audio, watermark, dan entry Studio proyek. Jangan membuat Kerangka C, mengganti default scaffold, atau mengubah slug yang sudah ada.
-- Gunakan bentuk SVG/DOM dan paket yang sudah tersedia jika hasilnya sesuai. Bila menggunakan painter Canvas, buat adapter terisolasi per video yang menerima waktu dari frame Remotion; jangan mengimpor skrip browser ber-global secara mentah sebagai modul TypeScript.
+- Gunakan bentuk SVG/DOM dan paket yang sudah tersedia jika hasilnya sesuai. Untuk Animate Math, adaptor siap pakai ada di `src/kit/animate-math.tsx` (opsional; video boleh membangun sendiri). Bila menggunakan painter Canvas, buat adapter terisolasi per video yang menerima waktu dari frame Remotion; jangan mengimpor skrip browser ber-global secara mentah sebagai modul TypeScript.
 - Jangan mengambil renderer, karakter, font, atau import `src/kit2d/` untuk video A. Kit B tetap khusus stick figure sinematik dan tidak berubah.
 - Source upstream menggabungkan head, kit, dan scene dalam satu scope. Jika memindahkan helper, beri namespace dan periksa semua dependensi. Jangan mendefinisikan `NOTE` atau nama global kit lain secara sembarang; bentrok dapat menggagalkan build.
 - Baca `vendor/animate/styles/<id>/STYLE.md` serta `kit.js`, lalu buat scene yang sesuai narasi, bukan sekadar mengganti label demo. Semua koordinat dan tekstur harus deterministik serta mengikuti ukuran canvas yang sebenarnya.
