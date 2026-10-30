@@ -1,0 +1,937 @@
+[
+ {
+  "word": "Kadang",
+  "start": 0.21,
+  "end": 0.58
+ },
+ {
+  "word": "kerja",
+  "start": 0.58,
+  "end": 1.06
+ },
+ {
+  "word": "di",
+  "start": 1.06,
+  "end": 1.25
+ },
+ {
+  "word": "pabrik",
+  "start": 1.25,
+  "end": 1.84
+ },
+ {
+  "word": "plywood",
+  "start": 1.84,
+  "end": 2.5
+ },
+ {
+  "word": "itu,",
+  "start": 2.5,
+  "end": 3.05
+ },
+ {
+  "word": "nama",
+  "start": 3.05,
+  "end": 3.27
+ },
+ {
+  "word": "kita",
+  "start": 3.27,
+  "end": 3.56
+ },
+ {
+  "word": "paling",
+  "start": 3.56,
+  "end": 4
+ },
+ {
+  "word": "cepet",
+  "start": 4,
+  "end": 4.39
+ },
+ {
+  "word": "disebut",
+  "start": 4.39,
+  "end": 5.04
+ },
+ {
+  "word": "justru",
+  "start": 5.04,
+  "end": 5.43
+ },
+ {
+  "word": "pas",
+  "start": 5.43,
+  "end": 5.66
+ },
+ {
+  "word": "ada",
+  "start": 5.66,
+  "end": 5.9
+ },
+ {
+  "word": "masalah.",
+  "start": 5.9,
+  "end": 6.7
+ },
+ {
+  "word": "Produksi",
+  "start": 6.7,
+  "end": 7.67
+ },
+ {
+  "word": "lancar,",
+  "start": 7.67,
+  "end": 8.54
+ },
+ {
+  "word": "sapi,",
+  "start": 8.54,
+  "end": 9.24
+ },
+ {
+  "word": "tumpukan",
+  "start": 9.24,
+  "end": 10.53
+ },
+ {
+  "word": "rapi,",
+  "start": 10.53,
+  "end": 11.25
+ },
+ {
+  "word": "biasa.",
+  "start": 11.25,
+  "end": 12
+ },
+ {
+  "word": "Begitu",
+  "start": 12,
+  "end": 12.5
+ },
+ {
+  "word": "ada",
+  "start": 12.5,
+  "end": 12.97
+ },
+ {
+  "word": "satu",
+  "start": 12.97,
+  "end": 13.09
+ },
+ {
+  "word": "lembar",
+  "start": 13.09,
+  "end": 13.58
+ },
+ {
+  "word": "bermasalah,",
+  "start": 13.58,
+  "end": 14.65
+ },
+ {
+  "word": "ini",
+  "start": 14.65,
+  "end": 15.09
+ },
+ {
+  "word": "tadi",
+  "start": 15.09,
+  "end": 15.34
+ },
+ {
+  "word": "siapa",
+  "start": 15.34,
+  "end": 15.83
+ },
+ {
+  "word": "yang",
+  "start": 15.83,
+  "end": 16.16
+ },
+ {
+  "word": "pegang?",
+  "start": 16.16,
+  "end": 17
+ },
+ {
+  "word": "Nah,",
+  "start": 17,
+  "end": 17.41
+ },
+ {
+  "word": "mendadak",
+  "start": 17.41,
+  "end": 18.06
+ },
+ {
+  "word": "semua",
+  "start": 18.06,
+  "end": 18.48
+ },
+ {
+  "word": "pengen",
+  "start": 18.48,
+  "end": 18.96
+ },
+ {
+  "word": "kenal",
+  "start": 18.96,
+  "end": 19.37
+ },
+ {
+  "word": "kita.",
+  "start": 19.37,
+  "end": 20
+ },
+ {
+  "word": "Dari",
+  "start": 20,
+  "end": 20.39
+ },
+ {
+  "word": "tadi",
+  "start": 20.39,
+  "end": 20.97
+ },
+ {
+  "word": "nyusun,",
+  "start": 20.97,
+  "end": 21.56
+ },
+ {
+  "word": "ngecek,",
+  "start": 21.56,
+  "end": 22.33
+ },
+ {
+  "word": "mindahin",
+  "start": 22.33,
+  "end": 23.1
+ },
+ {
+  "word": "lembaran",
+  "start": 23.1,
+  "end": 23.88
+ },
+ {
+  "word": "sambil",
+  "start": 23.88,
+  "end": 24.47
+ },
+ {
+  "word": "jaga",
+  "start": 24.47,
+  "end": 25.06
+ },
+ {
+  "word": "ritma",
+  "start": 25.06,
+  "end": 25.43
+ },
+ {
+  "word": "kerja.",
+  "start": 25.43,
+  "end": 26
+ },
+ {
+  "word": "Ada",
+  "start": 26,
+  "end": 26.21
+ },
+ {
+  "word": "yang",
+  "start": 26.21,
+  "end": 26.35
+ },
+ {
+  "word": "kurang",
+  "start": 26.35,
+  "end": 26.61
+ },
+ {
+  "word": "beres,",
+  "start": 26.61,
+  "end": 26.97
+ },
+ {
+  "word": "dibenerin",
+  "start": 26.97,
+  "end": 27.4
+ },
+ {
+  "word": "sebelum",
+  "start": 27.4,
+  "end": 27.84
+ },
+ {
+  "word": "lanjut",
+  "start": 27.84,
+  "end": 28.03
+ },
+ {
+  "word": "ke",
+  "start": 28.03,
+  "end": 28.16
+ },
+ {
+  "word": "bagian",
+  "start": 28.16,
+  "end": 28.42
+ },
+ {
+  "word": "berikutnya.",
+  "start": 28.42,
+  "end": 29.5
+ },
+ {
+  "word": "Tapi",
+  "start": 29.71,
+  "end": 29.81
+ },
+ {
+  "word": "karena",
+  "start": 29.81,
+  "end": 30.47
+ },
+ {
+  "word": "masalahnya",
+  "start": 30.47,
+  "end": 31.05
+ },
+ {
+  "word": "keburu",
+  "start": 31.05,
+  "end": 31.5
+ },
+ {
+  "word": "dibereskan,",
+  "start": 31.5,
+  "end": 32.59
+ },
+ {
+  "word": "orang",
+  "start": 32.59,
+  "end": 32.84
+ },
+ {
+  "word": "lain",
+  "start": 32.84,
+  "end": 33.08
+ },
+ {
+  "word": "ngga",
+  "start": 33.08,
+  "end": 33.33
+ },
+ {
+  "word": "sempet",
+  "start": 33.33,
+  "end": 33.71
+ },
+ {
+  "word": "liat.",
+  "start": 33.71,
+  "end": 34
+ },
+ {
+  "word": "Yang",
+  "start": 34,
+  "end": 34.37
+ },
+ {
+  "word": "kelihatan",
+  "start": 34.37,
+  "end": 35.19
+ },
+ {
+  "word": "cuma",
+  "start": 35.19,
+  "end": 35.56
+ },
+ {
+  "word": "kerjaan",
+  "start": 35.56,
+  "end": 36.2
+ },
+ {
+  "word": "lancar,",
+  "start": 36.2,
+  "end": 37.09
+ },
+ {
+  "word": "padahal",
+  "start": 37.09,
+  "end": 37.53
+ },
+ {
+  "word": "lancarnya",
+  "start": 37.53,
+  "end": 38.21
+ },
+ {
+  "word": "itu",
+  "start": 38.21,
+  "end": 38.44
+ },
+ {
+  "word": "juga",
+  "start": 38.44,
+  "end": 38.74
+ },
+ {
+  "word": "ada",
+  "start": 38.74,
+  "end": 39.04
+ },
+ {
+  "word": "yang",
+  "start": 39.04,
+  "end": 39.27
+ },
+ {
+  "word": "jagain.",
+  "start": 39.27,
+  "end": 40
+ },
+ {
+  "word": "Sekali",
+  "start": 42,
+  "end": 42
+ },
+ {
+  "word": "kecolongan,",
+  "start": 42,
+  "end": 43.06
+ },
+ {
+  "word": "baru",
+  "start": 43.06,
+  "end": 43.84
+ },
+ {
+  "word": "rame.",
+  "start": 43.84,
+  "end": 45
+ },
+ {
+  "word": "Ditanya",
+  "start": 45,
+  "end": 45.51
+ },
+ {
+  "word": "di",
+  "start": 45.51,
+  "end": 45.63
+ },
+ {
+  "word": "depan",
+  "start": 45.63,
+  "end": 46.01
+ },
+ {
+  "word": "teman",
+  "start": 46.01,
+  "end": 46.37
+ },
+ {
+  "word": "teman,",
+  "start": 46.37,
+  "end": 46.87
+ },
+ {
+  "word": "disuruh",
+  "start": 46.87,
+  "end": 47.37
+ },
+ {
+  "word": "ingat",
+  "start": 47.37,
+  "end": 47.73
+ },
+ {
+  "word": "urutannya.",
+  "start": 47.73,
+  "end": 48.72
+ },
+ {
+  "word": "Sementara",
+  "start": 48.72,
+  "end": 49.18
+ },
+ {
+  "word": "kerjaan",
+  "start": 49.18,
+  "end": 49.57
+ },
+ {
+  "word": "berikutnya",
+  "start": 49.57,
+  "end": 50.14
+ },
+ {
+  "word": "masih",
+  "start": 50.14,
+  "end": 50.43
+ },
+ {
+  "word": "nunggu.",
+  "start": 50.43,
+  "end": 51
+ },
+ {
+  "word": "Mau",
+  "start": 51,
+  "end": 51.25
+ },
+ {
+  "word": "jelasin,",
+  "start": 51.25,
+  "end": 52.01
+ },
+ {
+  "word": "takut",
+  "start": 52.01,
+  "end": 52.48
+ },
+ {
+  "word": "digira",
+  "start": 52.48,
+  "end": 52.93
+ },
+ {
+  "word": "cari",
+  "start": 52.93,
+  "end": 53.33
+ },
+ {
+  "word": "alasan,",
+  "start": 53.33,
+  "end": 54.09
+ },
+ {
+  "word": "diam",
+  "start": 54.09,
+  "end": 54.33
+ },
+ {
+  "word": "saja,",
+  "start": 54.33,
+  "end": 54.83
+ },
+ {
+  "word": "takut",
+  "start": 54.83,
+  "end": 55.16
+ },
+ {
+  "word": "dianggap",
+  "start": 55.16,
+  "end": 55.75
+ },
+ {
+  "word": "pengaku",
+  "start": 55.75,
+  "end": 56.29
+ },
+ {
+  "word": "salah.",
+  "start": 56.29,
+  "end": 57
+ },
+ {
+  "word": "Kalau",
+  "start": 57.21,
+  "end": 57.46
+ },
+ {
+  "word": "memang",
+  "start": 57.46,
+  "end": 58.01
+ },
+ {
+  "word": "salah,",
+  "start": 58.01,
+  "end": 58.65
+ },
+ {
+  "word": "ya",
+  "start": 58.65,
+  "end": 58.84
+ },
+ {
+  "word": "perlu",
+  "start": 58.84,
+  "end": 59.33
+ },
+ {
+  "word": "diperbaiki.",
+  "start": 59.33,
+  "end": 60.5
+ },
+ {
+  "word": "Kita",
+  "start": 60.5,
+  "end": 60.83
+ },
+ {
+  "word": "juga",
+  "start": 60.83,
+  "end": 61.04
+ },
+ {
+  "word": "ngga",
+  "start": 61.04,
+  "end": 61.3
+ },
+ {
+  "word": "mau",
+  "start": 61.3,
+  "end": 61.5
+ },
+ {
+  "word": "hasil",
+  "start": 61.5,
+  "end": 62.03
+ },
+ {
+  "word": "kerja",
+  "start": 62.03,
+  "end": 62.16
+ },
+ {
+  "word": "asal",
+  "start": 62.16,
+  "end": 62.43
+ },
+ {
+  "word": "lewat.",
+  "start": 62.43,
+  "end": 63
+ },
+ {
+  "word": "Cuma,",
+  "start": 63,
+  "end": 63.45
+ },
+ {
+  "word": "sebelum",
+  "start": 63.45,
+  "end": 63.98
+ },
+ {
+  "word": "menentukan",
+  "start": 63.98,
+  "end": 64.84
+ },
+ {
+  "word": "siapa",
+  "start": 64.84,
+  "end": 65.16
+ },
+ {
+  "word": "yang",
+  "start": 65.16,
+  "end": 65.42
+ },
+ {
+  "word": "salah,",
+  "start": 65.42,
+  "end": 66.09
+ },
+ {
+  "word": "boleh",
+  "start": 66.09,
+  "end": 66.34
+ },
+ {
+  "word": "ngga",
+  "start": 66.34,
+  "end": 66.53
+ },
+ {
+  "word": "diperiksa",
+  "start": 66.53,
+  "end": 67.04
+ },
+ {
+  "word": "dulu",
+  "start": 67.04,
+  "end": 67.29
+ },
+ {
+  "word": "masalahnya",
+  "start": 67.29,
+  "end": 68.04
+ },
+ {
+  "word": "muncul",
+  "start": 68.04,
+  "end": 68.21
+ },
+ {
+  "word": "di",
+  "start": 68.21,
+  "end": 68.43
+ },
+ {
+  "word": "bagian",
+  "start": 68.43,
+  "end": 68.68
+ },
+ {
+  "word": "mana?",
+  "start": 68.68,
+  "end": 69
+ },
+ {
+  "word": "Dan",
+  "start": 69,
+  "end": 69.29
+ },
+ {
+  "word": "sesekali,",
+  "start": 69.29,
+  "end": 70.25
+ },
+ {
+  "word": "pas",
+  "start": 70.25,
+  "end": 70.54
+ },
+ {
+  "word": "kerjaan",
+  "start": 70.54,
+  "end": 71.21
+ },
+ {
+  "word": "beres",
+  "start": 71.21,
+  "end": 71.67
+ },
+ {
+  "word": "denger",
+  "start": 71.67,
+  "end": 72.27
+ },
+ {
+  "word": "kalimat,",
+  "start": 72.27,
+  "end": 73.16
+ },
+ {
+  "word": "makasih",
+  "start": 73.16,
+  "end": 73.63
+ },
+ {
+  "word": "tadi",
+  "start": 73.63,
+  "end": 74.04
+ },
+ {
+  "word": "sudah",
+  "start": 74.04,
+  "end": 74.43
+ },
+ {
+  "word": "dibantu,",
+  "start": 74.43,
+  "end": 75
+ },
+ {
+  "word": "itu",
+  "start": 75,
+  "end": 75.28
+ },
+ {
+  "word": "rasanya",
+  "start": 75.28,
+  "end": 76.13
+ },
+ {
+  "word": "enak",
+  "start": 76.13,
+  "end": 76.38
+ },
+ {
+  "word": "banget.",
+  "start": 76.38,
+  "end": 77
+ },
+ {
+  "word": "Ngga",
+  "start": 77,
+  "end": 77.3
+ },
+ {
+  "word": "harus",
+  "start": 77.3,
+  "end": 77.76
+ },
+ {
+  "word": "nunggu",
+  "start": 77.76,
+  "end": 78.14
+ },
+ {
+  "word": "bikin",
+  "start": 78.14,
+  "end": 78.52
+ },
+ {
+  "word": "masalah",
+  "start": 78.52,
+  "end": 79.06
+ },
+ {
+  "word": "dulu,",
+  "start": 79.06,
+  "end": 79.52
+ },
+ {
+  "word": "baru",
+  "start": 79.52,
+  "end": 79.83
+ },
+ {
+  "word": "dianggap",
+  "start": 79.83,
+  "end": 80.46
+ },
+ {
+  "word": "ada.",
+  "start": 80.46,
+  "end": 81
+ },
+ {
+  "word": "Sampai,",
+  "start": 81.08,
+  "end": 81.65
+ },
+ {
+  "word": "kalau",
+  "start": 81.65,
+  "end": 82.07
+ },
+ {
+  "word": "dipanggil",
+  "start": 82.07,
+  "end": 82.84
+ },
+ {
+  "word": "atasan,",
+  "start": 82.84,
+  "end": 83.47
+ },
+ {
+  "word": "respon",
+  "start": 83.47,
+  "end": 84.09
+ },
+ {
+  "word": "pertama",
+  "start": 84.09,
+  "end": 84.55
+ },
+ {
+  "word": "bukan",
+  "start": 84.55,
+  "end": 84.97
+ },
+ {
+  "word": "\"iya",
+  "start": 84.97,
+  "end": 85.3
+ },
+ {
+  "word": "pak\",",
+  "start": 85.3,
+  "end": 86.06
+ },
+ {
+  "word": "tapi",
+  "start": 86.06,
+  "end": 86.13
+ },
+ {
+  "word": "dalam",
+  "start": 86.13,
+  "end": 86.55
+ },
+ {
+  "word": "hati,",
+  "start": 86.55,
+  "end": 87.23
+ },
+ {
+  "word": "\"oduh,",
+  "start": 87.23,
+  "end": 88.16
+ },
+ {
+  "word": "salah",
+  "start": 88.16,
+  "end": 88.64
+ },
+ {
+  "word": "apa",
+  "start": 88.64,
+  "end": 89.43
+ },
+ {
+  "word": "lagi?\"",
+  "start": 89.43,
+  "end": 90
+ },
+ {
+  "word": "Pernah",
+  "start": 90,
+  "end": 90.3
+ },
+ {
+  "word": "langsung",
+  "start": 90.3,
+  "end": 90.9
+ },
+ {
+  "word": "mengingat-ingat",
+  "start": 90.9,
+  "end": 91.48
+ },
+ {
+  "word": "kesalahan,",
+  "start": 91.48,
+  "end": 92
+ },
+ {
+  "word": "padahal",
+  "start": 92,
+  "end": 92.35
+ },
+ {
+  "word": "ternyata",
+  "start": 92.35,
+  "end": 92.75
+ },
+ {
+  "word": "cuma",
+  "start": 92.75,
+  "end": 93.09
+ },
+ {
+  "word": "disuruh",
+  "start": 93.09,
+  "end": 93.34
+ },
+ {
+  "word": "ambil",
+  "start": 93.34,
+  "end": 93.55
+ },
+ {
+  "word": "pulpen.",
+  "start": 93.55,
+  "end": 94
+ }
+]

@@ -1,0 +1,60 @@
+{
+  "name": "my-video",
+  "version": "1.0.0",
+  "description": "My Remotion video",
+  "repository": {},
+  "license": "UNLICENSED",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22.18.0"
+  },
+  "dependencies": {
+    "@huggingface/transformers": "4.2.0",
+    "@remotion/animated-emoji": "4.0.539",
+    "@remotion/animation-utils": "4.0.539",
+    "@remotion/captions": "4.0.539",
+    "@remotion/cli": "4.0.539",
+    "@remotion/effects": "4.0.539",
+    "@remotion/fonts": "4.0.539",
+    "@remotion/gif": "4.0.539",
+    "@remotion/google-fonts": "4.0.539",
+    "@remotion/layout-utils": "4.0.539",
+    "@remotion/light-leaks": "4.0.539",
+    "@remotion/media": "4.0.539",
+    "@remotion/media-parser": "4.0.539",
+    "@remotion/media-utils": "4.0.539",
+    "@remotion/motion-blur": "4.0.539",
+    "@remotion/noise": "4.0.539",
+    "@remotion/paths": "4.0.539",
+    "@remotion/preload": "4.0.539",
+    "@remotion/renderer": "4.0.539",
+    "@remotion/rounded-text-box": "4.0.539",
+    "@remotion/sfx": "4.0.539",
+    "@remotion/shapes": "4.0.539",
+    "@remotion/tailwind-v4": "4.0.539",
+    "@remotion/transitions": "4.0.539",
+    "@remotion/video-matting": "4.0.539",
+    "@remotion/whisper-webgpu": "4.0.539",
+    "react": "19.2.3",
+    "react-dom": "19.2.3",
+    "remotion": "4.0.539",
+    "zod": "4.5.4"
+  },
+  "devDependencies": {
+    "@remotion/eslint-config-flat": "4.0.539",
+    "@types/react": "19.2.7",
+    "@types/web": "0.0.166",
+    "eslint": "9.39.5",
+    "prettier": "3.8.1",
+    "typescript": "5.9.3"
+  },
+  "scripts": {
+    "dev": "remotion studio",
+    "studio": "remotion studio",
+    "test": "node --test tests/*.test.mjs",
+    "build": "remotion bundle",
+    "upgrade": "remotion upgrade",
+    "lint": "eslint src && tsc"
+  }
+}

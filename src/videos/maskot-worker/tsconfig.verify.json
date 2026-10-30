@@ -1,0 +1,5 @@
+{
+  "extends": "../../../tsconfig.json",
+  "include": ["./entry.tsx", "./Sheet.tsx", "../../kit/worker.tsx", "../../kit/worker-motion.ts"],
+  "exclude": []
+}

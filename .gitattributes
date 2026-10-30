@@ -1,0 +1,18 @@
+# Consistent source text across Windows and other machines.
+* text=auto eol=lf
+
+# Keep the pinned upstream bytes exact for its SHA-256 manifest.
+vendor/animate/** -text
+
+# Production media and packaged plugins are binary assets.
+*.wav binary
+*.mp3 binary
+*.mp4 binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.ttf binary
+*.otf binary
+*.woff binary
+*.woff2 binary
+*.plugin binary

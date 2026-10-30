@@ -1,0 +1,1 @@
+Ikuti `AGENTS.md` di root proyek. Sebelum mengerjakan video, baca lengkap `rules/RULES.md`, `rules/remotion-pro-rules.md`, dan `rules/VIDEO-WORKFLOW.md`. Proyek ini punya dua kerangka (A dan B); untuk video Kerangka B (stick figure sinematik 2D) baca juga `rules/KERANGKA-B.md` dan `rules/kerangka-b/style-bible.md`.
