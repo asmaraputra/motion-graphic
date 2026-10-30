@@ -13,8 +13,8 @@ Aturan pemilihannya ada di `rules/KERANGKA-B.md`, bagian "Kapan memakai Kerangka
 
 ## Input dari pengguna
 
-1. Brief/naskah (`.md` di root proyek).
-2. File voice-over (`.wav`, `.mp3`, atau format lain yang dibaca ffmpeg).
+1. Brief/naskah (`.md`), disimpan di `bahan/` (lokal, tidak ikut Git). Brief lama di root proyek (`brief.md`) tetap dikenali bila pengguna melampirkannya di sana.
+2. File voice-over (`.wav`, `.mp3`, atau format lain yang dibaca ffmpeg), disimpan di `bahan/`. Beri path file itu ke `scripts/new-video.mjs`; salinan yang dipakai video ada di `public/videos/<slug>/`.
 3. Rules tambahan (opsional).
 
 ## Konfirmasi awal video baru

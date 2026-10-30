@@ -75,7 +75,7 @@ Diorama papercut dan Animate Cut Paper sama-sama keluarga visual kertas dan bisa
 
 ### Bedah Teknis 2.5D
 
-**Referensi pengguna:** `contoh-1.mp4`. Analisis berdasarkan sampel frame sepanjang video, termasuk detail pada 12, 23, 26, 34, dan 43 detik. Pipeline atau software pembuat aslinya tidak diketahui.
+**Referensi pengguna:** `contoh-1.mp4` (file ini sudah dihapus dari repo; deskripsi di bawah tetap berlaku). Analisis berdasarkan sampel frame sepanjang video, termasuk detail pada 12, 23, 26, 34, dan 43 detik. Pipeline atau software pembuat aslinya tidak diketahui.
 
 **Arah visual:** Explainer mekanisme melalui ilustrasi teknis berlapis, perspektif konsisten, penampang bagian dalam, transparansi, label bergaris penunjuk, serta sorotan warna pada bagian yang sedang bekerja.
 

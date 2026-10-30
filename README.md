@@ -4,7 +4,7 @@ Vertical 1080×1920 narrated videos built in Remotion with React + TypeScript. A
 
 ## GitHub dan sinkronisasi
 
-Repo bersama: https://github.com/asmaraputra/motion-graphic. Ikuti [panduan sinkronisasi](docs/SINKRONISASI-GITHUB.md) untuk pull, commit, dan push dari kedua folder proyek. `brief.md` tetap lokal; arsip bersama ada di `briefs/`. Katalog mempertahankan lima gaya lama dan tujuh tambahan Animate, lihat `rules/visual-references.md`.
+Repo bersama: https://github.com/asmaraputra/motion-graphic. Ikuti [panduan sinkronisasi](docs/SINKRONISASI-GITHUB.md) untuk pull, commit, dan push dari kedua folder proyek. `brief.md` dan folder `bahan/` (brief kerja + voiceover) tetap lokal; arsip brief bersama ada di `briefs/`. Katalog mempertahankan lima gaya lama dan tujuh tambahan Animate, lihat `rules/visual-references.md`.
 
 ## Install and preview
 

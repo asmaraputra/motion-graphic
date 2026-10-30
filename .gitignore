@@ -19,8 +19,9 @@ settings.local.json
 *.pfx
 *.kdbx
 
-# Keep the working brief local; shared copies live in briefs/.
+# Keep the working brief and source material (brief, voice-over) local; shared copies live in briefs/.
 /brief.md
+/bahan/
 
 # Generated renders, local environments and caches.
 /out/
