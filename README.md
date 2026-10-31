@@ -4,7 +4,7 @@ Vertical 1080×1920 narrated videos built in Remotion with React + TypeScript. A
 
 ## GitHub dan sinkronisasi
 
-Repo bersama: https://github.com/asmaraputra/motion-graphic. Ikuti [panduan sinkronisasi](docs/SINKRONISASI-GITHUB.md) untuk pull, commit, dan push dari kedua folder proyek. `brief.md` dan folder `bahan/` (brief kerja + voiceover) tetap lokal; arsip brief bersama ada di `briefs/`. Katalog mempertahankan lima gaya lama dan tujuh tambahan Animate, lihat `rules/visual-references.md`.
+Repo bersama: https://github.com/asmaraputra/motion-graphic. Ikuti [panduan sinkronisasi](docs/SINKRONISASI-GITHUB.md) untuk pull, commit, dan push dari kedua folder proyek. Brief aktif berada di `bahan/brief.md` atau file brief terkait di `bahan/`, bersama voiceover mentah. Folder ini tetap lokal dan perlu disalin manual, tidak ikut pull GitHub; arsip brief bersama ada di `briefs/`. Katalog mempertahankan lima gaya lama dan tujuh tambahan Animate, lihat `rules/visual-references.md`.
 
 ## Install and preview
 
@@ -30,7 +30,7 @@ Select the composition, press Space to play/pause, and edit **Inspector → Defa
 Start a video from a brief and a voice-over (WAV, MP3 or any ffmpeg-readable format; converted automatically):
 
 ```sh
-node scripts/new-video.mjs <slug> <voiceover> [--kerangka b]
+node scripts/new-video.mjs <slug> "bahan/<file-voiceover>" [--kerangka b]
 node scripts/transcribe.mjs <slug>               # local whisper.cpp, see rules/VIDEO-WORKFLOW.md
 node scripts/render.mjs <slug> stills 1.5 10 20  # key frames + out/videos/<slug>/contact.png
 node scripts/render.mjs <slug> video             # out/videos/<slug>/<slug>.mp4, H.264 CRF 18, -14 LUFS / -1 dBTP
@@ -40,7 +40,7 @@ Kerangka B builds its soundtrack (music + SFX + ambience) with `.venv-kelindihan
 
 ### Izin Bos: independent Sol remake
 
-`src/videos/ijin-bos-sol/` is the retained Kerangka B version of `brief.md`: twelve cinematic shots, original Canvas office/phone/paper assets, and new acting and transitions. It reuses the kit's character rig. The old `ijin-bos` source, production assets, output, and timeline test were removed after comparison; the remake keeps its own narration, music, soundtrack, and word timings. `brief.md` and the raw input audio remain preserved.
+`src/videos/ijin-bos-sol/` is the retained Kerangka B remake based on the working brief (historically `brief.md` at the project root; current input location: `bahan/`): twelve cinematic shots, original Canvas office/phone/paper assets, and new acting and transitions. It reuses the kit's character rig. The old `ijin-bos` source, production assets, output, and timeline test were removed after comparison; the remake keeps its own narration, music, soundtrack, and word timings. This production note records the original inputs; consult the current files in `bahan/` for available working briefs and raw audio. Production narration remains in `public/videos/ijin-bos-sol/`.
 
 The narration and lo-fi instrumental are byte-identical copies of the approved old masters. The 99.265624-second narration includes the earlier voice replacement. Word timings reuse that master's existing local ASR result (approximately ±0.2 seconds, not forced alignment); only quoted dialogue drives mouth animation. Eleven sparse SFX are generated separately. The office, clothing, skyline, and house symbol are neutral illustrative choices, not new story facts.
 

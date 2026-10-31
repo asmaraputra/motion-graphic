@@ -1,6 +1,6 @@
 # Bumi berputar
 
-Video baru Kerangka A, infografik editorial flat tanpa maskot. Input tetap `brief.md` dan `bumi-berputar.mp3` di root proyek. Detail ilustratif netral: bentuk atap, jendela, titik pengamat, dan permukaan Bumi skematis. Tidak ada nama, lokasi, statistik atau fakta teknis tambahan.
+Video baru Kerangka A, infografik editorial flat tanpa maskot. Input awal saat produksi adalah `brief.md` dan `bumi-berputar.mp3` di root proyek. Lokasi standar bahan mentah kini `bahan/` (lokal, disalin manual); catatan historis ini bukan instruksi mencari input di root. Narasi produksi tetap berada di `public/videos/bumi-berputar/narration.wav`. Detail ilustratif netral: bentuk atap, jendela, titik pengamat, dan permukaan Bumi skematis. Tidak ada nama, lokasi, statistik atau fakta teknis tambahan.
 
 ## Preview
 

@@ -1,0 +1,5 @@
+{
+  "extends": "../../../tsconfig.json",
+  "include": ["./entry.tsx", "./Sheet.tsx", "../../kit/orang-hindu.tsx", "../../kit/orang-hindu-motion.ts"],
+  "exclude": []
+}

@@ -10,7 +10,7 @@ Baca ulang `rules/RULES.md`, `rules/remotion-pro-rules.md`, dan `rules/VIDEO-WOR
 - B: stick figure sinematik Canvas 2D, `src/kit2d/`, `templates/video-2d/`. Jangan campur kit A/B. Port lokal tidak mendukung shot 3D.
 - Lima gaya aktif: stick figure sinematik, infografik editorial flat, diorama papercut, UNIDO-PPDP, Bedah Teknis 2.5D.
 - Sebelum membuat video, selesaikan pilihan gaya, izin detail ilustratif, dan kebijakan teks bubble/diegetik yang belum diputuskan. Lima gaya harus tetap ditawarkan; jika UI pilihan terbatas, gunakan pertanyaan teks yang memuat kelimanya, jangan menghilangkan opsi.
-- Buat slug melalui `node scripts/new-video.mjs <slug> <voiceover> [--kerangka b]`.
+- Brief aktif dan voiceover mentah berada di `bahan/` (lokal, tidak ikut Git; salin manual pada setiap folder proyek). Gunakan brief dengan nama khusus slug saat bekerja paralel; jangan mengasumsikan input ada di root. Buat slug melalui `node scripts/new-video.mjs <slug> "bahan/<file-voiceover>" [--kerangka b]`, dengan nama file sebenarnya.
 - Transkripsi lokal: `node scripts/transcribe.mjs <slug>`. Cocokkan hasil ASR dengan naskah sebelum mengisi cue/shot.
 - A: isi timeline dan adegan, gunakan kit, tambahkan tes timeline. B: isi story, cast, set, shot, import shot pada scenes/index.js, lalu buat soundtrack lokal.
 - Pertahankan narasi utuh, tanpa subtitle penuh. Durasi mengikuti audio, bukan tambahan 1,5 detik dari panduan plugin asli.
