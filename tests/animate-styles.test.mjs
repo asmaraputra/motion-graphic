@@ -49,8 +49,34 @@ test('Flat Vector has one active name and an adapted production guide', () => {
 test('active catalog adds all seven Animate options without duplicates', () => {
   const table = read('rules/visual-references.md').split('## Pilihan visual disetujui untuk video berikutnya')[1].split('Jika gaya belum ditentukan')[0];
   const rows = table.split('\n').filter((line) => line.startsWith('| ') && !line.startsWith('| Pilihan visual'));
-  assert.equal(rows.length, 12);
+  assert.equal(rows.length, 13);
   for (const label of labels) assert.equal(rows.filter((line) => line.startsWith(`| ${label} |`)).length, 1, label);
+});
+
+test('Liquid Glass is one additional A style with an honest optical readiness boundary', () => {
+  const catalog = read('rules/visual-references.md');
+  const table = catalog.split('## Pilihan visual disetujui untuk video berikutnya')[1].split('Jika gaya belum ditentukan')[0];
+  assert.equal(table.split('\n').filter((line) => line.startsWith('| Liquid Glass | A (adaptasi) |')).length, 1);
+  const guide = read('rules/liquid-glass.md');
+  for (const required of ['Kerangka A', 'bukan preset siap-render', 'pembiasan atau pembesaran latar yang terlihat', 'backdrop-filter: blur()', 'foreground tajam', 'koordinat UV', 'frame sebelumnya', 'overscan', 'izin ekspor eksplisit', 'Liquid Glass belum terpenuhi']) assert.ok(guide.includes(required), required);
+  assert.ok(catalog.includes('rules/liquid-glass.md'));
+  const menu = read('rules/animate-styles.md');
+  assert.match(menu, /\*\*Motion graphic A\*\*:.*Liquid Glass/);
+  assert.ok(menu.includes('lima pilihan melebihi batas empat'));
+});
+
+test('paper variants preserve the diorama choice and separate editorial material rules', () => {
+  const catalog = read('rules/visual-references.md');
+  const table = catalog.split('## Pilihan visual disetujui untuk video berikutnya')[1].split('Jika gaya belum ditentukan')[0];
+  const row = table.split('\n').filter((line) => line.startsWith('| Animate Cut Paper |'));
+  assert.equal(row.length, 1);
+  for (const label of ['Kolase', 'Editorial Paper Cut-Out']) assert.ok(row[0].includes(label), label);
+  assert.equal(table.split('\n').filter((line) => line.startsWith('| Diorama papercut |')).length, 1);
+  assert.ok(!table.includes('| Editorial Paper Cut-Out |'), 'variant must not duplicate the family');
+  const guide = read('rules/animate-styles.md').split('## Animate Cut Paper: dua varian')[1].split('## Animate Isometric: dua varian')[0];
+  for (const required of ['### Kolase', '### Editorial Paper Cut-Out', 'lalu tunggu pilihan', 'Kerangka A', 'koordinat lokal objek', 'jangan regenerasi setiap frame', 'Stepped stop-motion hanya aksen selektif', 'Vendor tetap utuh', 'izin ekspor eksplisit', 'bukan preset siap-render']) {
+    assert.ok(guide.includes(required), required);
+  }
 });
 
 test('isometric variants preserve one catalog family and separate visual contracts', () => {

@@ -12,7 +12,7 @@ Library sumber lengkap tersedia di `vendor/animate/`, dipin pada commit `7e5eb56
 
 | Nama pilihan | ID sumber | Ciri dan penggunaan |
 |---|---|---|
-| Animate Cut Paper | `cut-paper` | Potongan kertas berwarna, tepi tidak rata, bayangan, tekstur, dan karakter ekspresif. Cocok untuk cerita ringan. Tetap berbeda dari pilihan lama Diorama papercut yang menekankan layer 2.5D dan parallax. |
+| Animate Cut Paper | `cut-paper` | Dua varian: Kolase (tekstur ekspresif, karakter, suasana playful) dan Editorial Paper Cut-Out (diagram, mekanisme, informasi melalui potongan kertas). Diorama papercut tetap terpisah untuk ruang 2.5D dan parallax. |
 | Animate Crosshatch | `crosshatch` | Garis tinta, arsiran silang, kertas hangat, dan lingkungan gelap opsional. Cocok untuk rumah, benda sehari-hari, dan cerita pengamatan. |
 | Animate Riso | `riso` | Cetak risograf digital, warna tinta terbatas, halftone, overprint, dan misregistration terkendali. Tidak mengklaim cetakan fisik. |
 | Animate Sketchbook | `sketchbook` | Grafit, satu aksen warna, tulisan tangan, dan tekstur buku sketsa. Cocok untuk pengamatan personal dan proses. |
@@ -31,11 +31,51 @@ Sebelum menampilkan pilihan, baca bagian naskah pada brief yang sebenarnya dan r
 Jika tool pertanyaan membatasi empat pilihan, gunakan dua tingkat, bukan menghilangkan opsi:
 
 1. **Stick figure sinematik**: pilihan B.
-2. **Motion graphic A**: Flat Vector, Diorama papercut, UNIDO-PPDP, Bedah Teknis 2.5D.
+2. **Motion graphic A**: Flat Vector, Diorama papercut, UNIDO-PPDP, Bedah Teknis 2.5D, Liquid Glass. Karena lima pilihan melebihi batas empat, tanyakan secara terbuka dengan semua nama terlihat atau pecah ke subkelompok lalu minta pilihan spesifik; jangan menghilangkan satu opsi.
 3. **Animate ilustratif**: Animate Cut Paper, Animate Crosshatch, Animate Riso, Animate Sketchbook.
 4. **Animate diagram/pixel**: Animate Math, Animate Pixel, Animate Isometric.
 
 Sesudah keluarga dipilih, tanyakan gaya spesifik dalam keluarga itu bila lebih dari satu. Pemilihan keluarga belum berarti pemilihan gaya. Keputusan detail spesifik, bubble, dan maskot (Worker/Orang Hindu/Tanpa maskot, hanya Kerangka A) tetap terpisah dan tidak ditanyakan ulang jika sudah jelas. Jika pengguna menyebut gaya tertentu atau mendelegasikan desain secara eksplisit, ikuti keputusan tersebut tanpa menu ulang.
+
+## Animate Cut Paper: dua varian
+
+Animate Cut Paper tetap satu pilihan keluarga dengan varian **Kolase** dan **Editorial Paper Cut-Out**, keduanya Kerangka A. Diorama papercut tetap pilihan terpisah: penekanannya ruang berlapis dan parallax, bukan pembagian varian ini. Ini arah desain, bukan preset siap-render atau klaim stop-motion kertas fisik.
+
+### Memilih varian kertas
+
+- Jika pengguna hanya memilih Animate Cut Paper atau menyebut paper cut-out tanpa varian yang jelas, tampilkan Kolase dan Editorial Paper Cut-Out, rekomendasikan berdasarkan naskah, lalu tunggu pilihan. Jangan memilih atau mencampur otomatis.
+- Jika varian sudah disebut atau keputusan didelegasikan eksplisit, jangan bertanya ulang. Catat pilihan di catatan produksi video. Istilah Editorial Paper Cut-Out menunjuk varian Editorial, bukan gaya baru di luar keluarga.
+- Konfirmasi detail ilustratif, teks bubble/diegetik, dan maskot tetap terpisah. Karakter spark upstream tidak otomatis menggantikan Worker/Orang Hindu/Tanpa maskot.
+
+### Kolase
+
+- Rujuk `vendor/animate/styles/cut-paper/STYLE.md` untuk identitas kolase: tepi sobek, tekstur grain/crayon, pola kertas, dunia penuh warna, dan karakter ekspresif yang ikut beraksi. Detail latar membangun suasana, bukan menutupi penjelasan.
+- Pertahankan rasa playful, pop dan pergantian pose terarah. Gerak on-2s boleh sebagai pilihan rasa gambar; waktu narasi, cue, durasi, dan sinkron audio tetap mengikuti clock proyek.
+- Aturan upstream tentang karakter berwajah, pola, detail latar, tulisan tangan, serta aksen hero adalah referensi varian Kolase, bukan kewajiban universal semua video kertas. Penerapannya mengikuti brief, pilihan maskot, batas maksimal gerak simultan, keterbacaan, dan larangan detail rekaan proyek.
+
+### Editorial Paper Cut-Out
+
+**Identitas:** informasi dan mekanisme dijelaskan oleh susunan potongan kertas, bukan flat vector dengan overlay grain. Objek, diagram, label, dan jalur terasa dibuat dari material yang sama.
+
+- Gunakan material matte dengan tepi potong sedikit tidak sempurna, serat halus stabil, ketebalan tipis yang sesekali terlihat, pemisahan lapisan, cahaya searah, dan bayangan lembut. Jangan mewajibkan setiap tepi sobek kasar atau menumpuk blur hingga bentuk dan huruf kabur.
+- Bangun ilustrasi yang dikenali dari komponen bermakna, bukan ikon generik atau satu gambar utuh. Detail menyampaikan fungsi atau identitas. Pilih palet terbatas sesuai brief; cream, terakota, mustard, sage, dan dusty blue pada referensi bukan palet wajib.
+- Diagram menjadi benda kertas: strip terbuka menjadi alur, jendela membuka detail, lapisan terangkat menjadi penampang, potongan terpisah memperlihatkan mekanisme, dan label menempel pada objek yang bergerak. Aliran, perbandingan, dan perubahan keadaan harus mempunyai makna faktual, bukan angka dekoratif.
+- Jaga perilaku material: potongan mengangkat, berputar, melipat pada engsel/lipatan yang masuk akal, bergeser, atau disusun ulang. Hindari morph cair dan peregangan karet yang tidak sesuai kertas. Lipatan digital merupakan simulasi visual, bukan bukti fisika atau rotasi 3D bebas.
+- Utamakan kamera, tipografi, diagram, transisi, dan aliran informasi yang mulus pada fps proyek. Stepped stop-motion hanya aksen selektif pada potongan fisik; jangan kuantisasi seluruh video atau menggeser timing narasi demi rasa handmade.
+- Tekstur melekat pada koordinat lokal objek, ikut transformasi induk, dan tidak bergeser seperti noise layar. Gunakan seed stabil dan generator deterministik yang tercampur baik; cache tekstur, jangan regenerasi setiap frame. Hindari satu langkah xorshift pada seed berurutan untuk sampel independen. Grain global boleh mendukung finishing, tetapi bukan pengganti material tiap potongan.
+- Terapkan arah cahaya dan urutan layer konsisten. Saat potongan terangkat, perubahan bayangan mengikuti pemisahannya secara terkontrol; jangan menyamakan semua kedalaman dengan satu drop shadow. Pivot, sambungan, titik kontak, dan label tetap mengikuti induknya.
+- Variasikan komposisi ilustrasi, close-up, diagram, perbandingan, dan penampang. Karakter, crayon, pola ramai, detail latar dekoratif, atau lingkungan full-bleed tidak wajib pada varian Editorial. Ruang kosong boleh digunakan untuk kejelasan, tanpa membuat objek tampak melayang tanpa konteks.
+- Gunakan tipografi editorial terbaca dan kata kunci sesuai proyek, bukan wajib tulisan tangan. Label/bidang kertas mendukung hierarki; jangan menjadikannya tumpukan kartu atau paragraf panjang. Teks diegetik tetap mengikuti keputusan pengguna.
+- Kembangkan beberapa perubahan informasi dalam adegan: rakit, ungkap, peragakan, tunjukkan hasil, lalu bawa potongan/jalur yang sama ke komposisi berikutnya. Transisi lewat lipatan, strip berlanjut, jendela, atau lembar foreground; bukan fade/pop berulang. Jumlah beat mengikuti naskah, bukan kuota prompt.
+
+### Adaptasi dan QA kertas
+
+- Untuk Kolase, baca aturan upstream lalu adaptasikan sesuai proyek. Untuk Editorial, bagian Editorial di atas sengaja mengganti kewajiban on-2s seluruh gerak, karakter, crayon/pola, full-bleed, dan tulisan tangan upstream. Jangan memaksakan kontrak visual yang bertentangan. Vendor tetap utuh.
+- `src/kit/papercut.tsx` menyediakan fondasi diorama yang opsional, bukan implementasi lengkap Editorial. Grain global dan shadow saja tidak membuktikan material baru. Buat komponen/adapter per video jika diperlukan; jangan mengubah kit atau tampilan video lama demi varian ini.
+- Gunakan timeline dan frame Remotion, cache geometri/material, aset lokal, musik dan SFX yang mengikuti aksi kertas. Jangan membuat renderer/editor ekspor kedua, clock browser independen, atau impor `src/kit2d/`. Audio master utuh, hook frame 0, safe zone, watermark, batas overshoot, hold hidup, dan CTA tetap mengikuti proyek.
+- Saat review yang diizinkan, cek tekstur tidak berenang/flicker, konsistensi cahaya dan bayangan, tepi/lapisan, lipatan, titik kontak, label yang melekat, keterbacaan diagram, transisi, serta sinkron SFX. Periksa hasil pada ukuran HP. Thumbnail mengikuti rasio video; contoh 640 × 360 bukan ukuran universal untuk video 9:16.
+- Studio tetap manual kecuali diminta lain; tunggu izin ekspor eksplisit setelah review. Tes katalog/build demo bukan QA visual/audio atau bukti preset siap pakai.
+- Asal Editorial: prompt Paper Cut-Out dari pengguna melalui `kinetic-typografi.md`, file referensi yang dapat berubah. Panduan ini mandiri; konfigurasi contoh, instruksi HTML Artifact, larangan Remotion, Web Audio/MediaRecorder, dan perintah langsung membuat MP4 tidak diadopsi. Material ini simulasi digital, bukan klaim karya kertas fisik.
 
 ## Animate Isometric: dua varian
 
@@ -84,7 +124,7 @@ Animate Isometric tetap satu pilihan keluarga dalam katalog aktif, dengan varian
 - Gunakan bentuk SVG/DOM dan paket yang sudah tersedia jika hasilnya sesuai. Untuk Animate Math, adaptor siap pakai ada di `src/kit/animate-math.tsx` (opsional; video boleh membangun sendiri). Bila menggunakan painter Canvas, buat adapter terisolasi per video yang menerima waktu dari frame Remotion; jangan mengimpor skrip browser ber-global secara mentah sebagai modul TypeScript.
 - Jangan mengambil renderer, karakter, font, atau import `src/kit2d/` untuk video A. Kit B tetap khusus stick figure sinematik dan tidak berubah.
 - Source upstream menggabungkan head, kit, dan scene dalam satu scope. Jika memindahkan helper, beri namespace dan periksa semua dependensi. Jangan mendefinisikan `NOTE` atau nama global kit lain secara sembarang; bentrok dapat menggagalkan build.
-- Baca `vendor/animate/styles/<id>/STYLE.md` serta `kit.js`, lalu buat scene yang sesuai narasi, bukan sekadar mengganti label demo. Untuk Animate Isometric, baca juga bagian dua varian di atas; adaptasi Teknis mengikuti aturan visualnya sendiri, bukan batas Minimal upstream. Semua koordinat dan tekstur harus deterministik serta mengikuti ukuran canvas yang sebenarnya.
+- Baca `vendor/animate/styles/<id>/STYLE.md` serta `kit.js`, lalu buat scene yang sesuai narasi, bukan sekadar mengganti label demo. Untuk Animate Cut Paper dan Animate Isometric, baca juga panduan dua varian masing-masing di atas; adaptasi Editorial/Teknis mengikuti kontrak visualnya sendiri pada bagian yang sengaja berbeda dari upstream. Semua koordinat dan tekstur harus deterministik serta mengikuti ukuran canvas yang sebenarnya.
 - Gerak on-2s merupakan pilihan rasa gambar; jam narasi dan durasi output tetap mengikuti audio. Kuantisasi detail gambar tidak boleh menggeser cue atau memotong kata.
 - Utamakan satu bahasa visual. Jangan mencampur tujuh gaya sekaligus atau menambahkan hero bintang bawaan sebagai pengganti Worker tanpa keputusan pengguna.
 - Pipeline HTML standalone upstream tetap referensi/eksperimen terpisah, bukan jalur produksi default. Jika pengguna secara khusus menginginkannya, jelaskan batas adapter dan minta keputusan sebelum mengubah workflow.

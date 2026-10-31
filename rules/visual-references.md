@@ -13,7 +13,7 @@ Riset: 28 Oktober 2026. Tujuan: memperluas pilihan visual melampaui infografik f
 
 ## Pilihan visual disetujui untuk video berikutnya
 
-**Status:** Daftar aktif mempertahankan lima pilihan awal dan menambahkan tujuh pilihan Animate yang disetujui pengguna. Infografik editorial flat berganti nama menjadi **Flat Vector** atas permintaan pengguna; bukan tambahan pilihan. Semua dua belas pilihan tetap tersedia dan tidak diterapkan ulang pada video lama.
+**Status:** Daftar aktif mempertahankan lima pilihan awal dan tujuh pilihan Animate, serta menambahkan **Liquid Glass** sebagai arah visual Kerangka A. Infografik editorial flat berganti nama menjadi **Flat Vector** atas permintaan pengguna; bukan tambahan pilihan. Semua tiga belas pilihan tetap tersedia dan tidak diterapkan ulang pada video lama.
 
 | Pilihan visual | Kerangka | Ciri utama |
 |---|---|---|
@@ -22,7 +22,8 @@ Riset: 28 Oktober 2026. Tujuan: memperluas pilihan visual melampaui infografik f
 | Diorama papercut | A | Potongan ilustrasi berlapis, bayangan lembut, dan parallax dengan rasa kertas. |
 | UNIDO-PPDP | A | Explainer ilustratif dengan palet adaptasi dan karakter original. |
 | Bedah Teknis 2.5D | A | Penampang teknis berlapis, perspektif konsisten, anotasi, dan sorotan mekanisme. |
-| Animate Cut Paper | A (adaptasi) | Potongan kertas bertekstur, tepi tidak rata, bayangan, dan karakter ekspresif. |
+| Liquid Glass | A (adaptasi) | Kaca deformabel dengan pembiasan/pembesaran latar yang terlihat, transisi optik, dan informasi foreground tajam. |
+| Animate Cut Paper | A (adaptasi) | Dua varian: Kolase (tekstur ekspresif dan karakter playful) dan Editorial Paper Cut-Out (diagram, mekanisme, serta informasi dari potongan kertas). |
 | Animate Crosshatch | A (adaptasi) | Garis tinta, arsiran silang, kertas hangat, dan suasana keseharian. |
 | Animate Riso | A (adaptasi) | Tinta terbatas, halftone, overprint, dan misregistration cetak digital. |
 | Animate Sketchbook | A (adaptasi) | Grafit, satu warna aksen, dan rasa halaman buku sketsa. |
@@ -85,7 +86,7 @@ Nama aktif baru untuk **Infografik editorial flat**, bukan pilihan tambahan atau
 
 Pakai kerangka A dengan ilustrasi potongan berlapis, kedalaman semu, bayangan konsisten, dan parallax. Ini adaptasi digital 2.5D; bukan janji stop-motion kertas fisik atau rotasi bebas 3D. Aset siap pakai ada di `src/kit/papercut.tsx` (lihat `rules/VIDEO-WORKFLOW.md`, langkah 5).
 
-Diorama papercut dan Animate Cut Paper sama-sama keluarga visual kertas dan bisa tumpang tindih. Di katalog proyek, Diorama menekankan susunan ruang berlapis dan gerak kamera/parallax; Animate Cut Paper menekankan kolase bertekstur, tepi sobek, serta akting karakter. Ini perbedaan penekanan dan sumber kit, bukan batas teknik yang mutlak. Keduanya tetap pilihan terpisah sampai pengguna meminta perubahan katalog.
+Diorama papercut dan Animate Cut Paper sama-sama keluarga visual kertas dan bisa tumpang tindih. Diorama menekankan susunan ruang berlapis dan gerak kamera/parallax. Animate Cut Paper mempunyai dua varian: **Kolase**, untuk tekstur ekspresif, tepi sobek, dan akting karakter playful; serta **Editorial Paper Cut-Out**, untuk diagram, mekanisme, dan informasi yang dijelaskan melalui susunan potongan kertas. Ini perbedaan penekanan, bukan batas teknik mutlak. Diorama tetap pilihan terpisah dan tidak digantikan kedua varian tersebut. Pemilihan varian dan aturan adaptasi ada di `rules/animate-styles.md`.
 
 ### UNIDO-PPDP
 
@@ -126,6 +127,10 @@ Diorama papercut dan Animate Cut Paper sama-sama keluarga visual kertas dan bisa
 - Kartu sumber, ukuran, angka, dan skala hanya ditampilkan jika ada dasar faktual. Penampang yang disederhanakan atau celah yang diperbesar diberi keterangan bila berpotensi menyesatkan.
 - Subtitle per kata pada contoh bukan bagian wajib gaya. Aturan teks, area aman, watermark, dan audio tetap mengikuti brief serta aturan proyek.
 - Jangan menyalin logo, karakter, aset, atau seluruh layout contoh. Ini pilihan visual untuk produksi berikutnya, bukan preset siap render dan bukan kerangka baru.
+
+### Liquid Glass
+
+Pilihan Kerangka A dengan pembiasan/pembesaran latar yang terlihat, deformasi kaca, transisi optik berkesinambungan, dan tipografi/diagram foreground tajam. Baca **`rules/liquid-glass.md`** sebelum memilih pendekatan atau membangun adegan. Ini referensi pengguna, bukan bagian source MIT Animate dan bukan preset Remotion siap-render. Blur/transparansi saja tidak memenuhi gaya; pembuktian efek optik untuk video terkait harus dilakukan sesuai izin review sebelum mengklaim kesiapan. Tidak ada perubahan pada kit, renderer, dependency, atau video lama hanya karena gaya ditambahkan.
 
 ### Pilihan tambahan dari Animate
 

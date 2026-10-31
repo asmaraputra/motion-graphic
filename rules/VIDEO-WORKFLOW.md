@@ -47,6 +47,7 @@ Konfirmasi ini berlaku bagi kerangka A maupun B. Default preferensi di bawah mel
    Hasil: `out/videos/<slug>/words.txt` (detik + kata). Isi `CUES` di `timeline.ts` dari file ini. Estimasi ±0,2 s, bukan forced alignment.
    Whisper sering salah dengar istilah teknis (eskalator: "rel" jadi "real", "roda" jadi "rodah", "kerangkaian" jadi "kerangkayan"). Cocokkan `words.txt` dengan naskah sebelum mengisi `CUES`; ejaan di layar selalu dari naskah.
 4. Terapkan gaya visual yang sudah dipilih pada konfirmasi awal (aturan 18 di `rules/remotion-pro-rules.md`). Daftar lengkap pilihan aktif ada di `rules/visual-references.md`; penambahan gaya tidak menghapus pilihan lama. Untuk gaya Animate, baca juga `rules/animate-styles.md` dan aturan gaya di `vendor/animate/styles/<id>/STYLE.md`; source upstream bukan preset Remotion atau kerangka baru. Pilihan visual berdiri sendiri, bukan kerangka baru atau gaya yang otomatis dicampur. Arsip riset lainnya belum menjadi pilihan aktif. Jangan ubah video yang sudah selesai.
+   Untuk Liquid Glass, baca `rules/liquid-glass.md` sebelum menentukan pendekatan optik atau membangun adegan; ini pilihan A dengan adaptasi, bukan preset siap-render atau bagian source Animate.
    Latar `INK.bg`, Poppins, dan tampilan `src/compositions/kerja12/` adalah default kerangka, bukan gaya wajib; ganti per video di `Video.tsx`, jangan ubah `src/kit/brand.ts`.
 5. Bangun adegan di `Video.tsx`. Pakai kit, jangan menulis ulang:
    - `src/kit/motion.ts`: `k`, `life`, `lerp`, `EASE`, `useT` (waktu dalam detik).
