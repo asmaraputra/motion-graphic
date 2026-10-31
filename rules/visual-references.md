@@ -32,7 +32,7 @@ Riset: 28 Oktober 2026. Tujuan: memperluas pilihan visual melampaui infografik f
 
 Jika gaya belum ditentukan, tampilkan seluruh pilihan aktif. Jika tool membatasi jumlah opsi, gunakan pengelompokan dua tingkat di `rules/animate-styles.md` agar semua nama tetap terlihat dan pilihan spesifik tidak ditebak. Wajib rekomendasikan satu gaya dari analisis bagian naskah pada brief, disertai alasan singkat dan posisi pertama pada menu terkait; jangan menyembunyikan gaya lama atau hanya menawarkan tambahan terbaru. Ikuti rincian analisis di `rules/VIDEO-WORKFLOW.md`. Gaya dan kerangka bukan hal yang sama; beberapa gaya memakai kerangka A.
 
-Pilih satu bahasa visual utama sesuai brief; jangan otomatis mencampur gaya atau menerapkannya ke video yang sudah selesai. Detail spesifik, teks bubble, dan maskot `Worker` (hanya Kerangka A) adalah pilihan terpisah dari gaya; ikuti tahap konfirmasi awal di `rules/VIDEO-WORKFLOW.md`.
+Pilih satu bahasa visual utama sesuai brief; jangan otomatis mencampur gaya atau menerapkannya ke video yang sudah selesai. Detail spesifik, teks bubble, dan maskot (Worker/Orang Hindu/Tanpa maskot, hanya Kerangka A) adalah pilihan terpisah dari gaya; ikuti tahap konfirmasi awal di `rules/VIDEO-WORKFLOW.md`.
 
 Bagian bernomor di bawah merupakan arsip riset tambahan, bukan daftar gaya aktif atau pengganti katalog aktif di atas. Contoh sawit di arsip hanya konteks riset terdahulu, bukan permintaan revisi video sawit.
 

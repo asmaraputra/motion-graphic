@@ -35,7 +35,7 @@ Jika tool pertanyaan membatasi empat pilihan, gunakan dua tingkat, bukan menghil
 3. **Animate ilustratif**: Animate Cut Paper, Animate Crosshatch, Animate Riso, Animate Sketchbook.
 4. **Animate diagram/pixel**: Animate Math, Animate Pixel, Animate Isometric.
 
-Sesudah keluarga dipilih, tanyakan gaya spesifik dalam keluarga itu bila lebih dari satu. Pemilihan keluarga belum berarti pemilihan gaya. Keputusan detail spesifik, bubble, dan Worker tetap terpisah dan tidak ditanyakan ulang jika sudah jelas. Jika pengguna menyebut gaya tertentu atau mendelegasikan desain secara eksplisit, ikuti keputusan tersebut tanpa menu ulang.
+Sesudah keluarga dipilih, tanyakan gaya spesifik dalam keluarga itu bila lebih dari satu. Pemilihan keluarga belum berarti pemilihan gaya. Keputusan detail spesifik, bubble, dan maskot (Worker/Orang Hindu/Tanpa maskot, hanya Kerangka A) tetap terpisah dan tidak ditanyakan ulang jika sudah jelas. Jika pengguna menyebut gaya tertentu atau mendelegasikan desain secara eksplisit, ikuti keputusan tersebut tanpa menu ulang.
 
 ## Produksi dalam proyek ini
 
