@@ -13,12 +13,12 @@ Riset: 28 Oktober 2026. Tujuan: memperluas pilihan visual melampaui infografik f
 
 ## Pilihan visual disetujui untuk video berikutnya
 
-**Status:** Daftar aktif mempertahankan lima pilihan lama dan menambahkan tujuh pilihan Animate yang disetujui pengguna. Semua dua belas pilihan tetap tersedia; penambahan tidak menghapus, mengganti nama, atau menerapkan ulang gaya pada video lama.
+**Status:** Daftar aktif mempertahankan lima pilihan awal dan menambahkan tujuh pilihan Animate yang disetujui pengguna. Infografik editorial flat berganti nama menjadi **Flat Vector** atas permintaan pengguna; bukan tambahan pilihan. Semua dua belas pilihan tetap tersedia dan tidak diterapkan ulang pada video lama.
 
 | Pilihan visual | Kerangka | Ciri utama |
 |---|---|---|
 | Stick figure sinematik | B | Karakter stick figure, set sinematik 2D, rim light, dan gerak kamera. |
-| Infografik editorial flat | A | Tipografi, ilustrasi vektor datar, diagram, dan perubahan bentuk yang menjelaskan narasi. |
+| Flat Vector | A | Ilustrasi vektor datar terstruktur, diagram, morph terarah, dan transisi berbasis objek yang menjelaskan narasi. |
 | Diorama papercut | A | Potongan ilustrasi berlapis, bayangan lembut, dan parallax dengan rasa kertas. |
 | UNIDO-PPDP | A | Explainer ilustratif dengan palet adaptasi dan karakter original. |
 | Bedah Teknis 2.5D | A | Penampang teknis berlapis, perspektif konsisten, anotasi, dan sorotan mekanisme. |
@@ -28,7 +28,7 @@ Riset: 28 Oktober 2026. Tujuan: memperluas pilihan visual melampaui infografik f
 | Animate Sketchbook | A (adaptasi) | Grafit, satu warna aksen, dan rasa halaman buku sketsa. |
 | Animate Math | A (adaptasi) | Panggung gelap, sumbu, kurva, dan transformasi konsep matematika. |
 | Animate Pixel | A (adaptasi) | Resolusi logis rendah, nearest-neighbour, dan font bitmap. |
-| Animate Isometric | A (adaptasi) | Proyeksi isometrik, bidang bersih, garis tipis, dan diagram ruang. |
+| Animate Isometric | A (adaptasi) | Dua varian: Minimal (dimetrik 2:1, monokrom, hairline) dan Teknis (Isometric Line Art, hierarki garis, assembly dan aliran). |
 
 Jika gaya belum ditentukan, tampilkan seluruh pilihan aktif. Jika tool membatasi jumlah opsi, gunakan pengelompokan dua tingkat di `rules/animate-styles.md` agar semua nama tetap terlihat dan pilihan spesifik tidak ditebak. Wajib rekomendasikan satu gaya dari analisis bagian naskah pada brief, disertai alasan singkat dan posisi pertama pada menu terkait; jangan menyembunyikan gaya lama atau hanya menawarkan tambahan terbaru. Ikuti rincian analisis di `rules/VIDEO-WORKFLOW.md`. Gaya dan kerangka bukan hal yang sama; beberapa gaya memakai kerangka A.
 
@@ -40,9 +40,46 @@ Bagian bernomor di bawah merupakan arsip riset tambahan, bukan daftar gaya aktif
 
 Pakai kerangka B sesuai `rules/KERANGKA-B.md` dan style bible-nya. Karakter, akting, pencahayaan, serta framing sinematik memimpin cerita. Jangan mencampur import kit A dan B.
 
-### Infografik editorial flat
+### Flat Vector
 
-Pakai kerangka A. Utamakan ilustrasi vektor datar, hierarki kata kunci, diagram sebab-akibat, dan morph objek yang relevan. Palet serta tipografi mengikuti brief, bukan wajib memakai tampilan default kit.
+Nama aktif baru untuk **Infografik editorial flat**, bukan pilihan tambahan atau kerangka baru. Catatan historis video yang memakai nama lama tetap sah. Pakai Kerangka A; jangan mengubah video lama, default kit, atau mencampur `src/kit2d/`.
+
+**Identitas:** explainer editorial 2D dengan ilustrasi vektor original terstruktur, warna solid, kontur tegas, diagram fungsional, morph terarah, serta transisi berbasis objek. Ilustrasi dan perubahan keadaan memimpin penjelasan; teks memberi konteks, bukan menutupi gambar generik. Berbeda dari Kinetic Typography yang dipimpin kata dan susunan huruf. Ini panduan arah visual, bukan preset siap-render atau jaminan kualitas studio.
+
+#### Ilustrasi dan komposisi
+
+- Bangun objek dengan siluet yang mudah dikenali pada layar HP. Gunakan kurva Bézier, bidang isi, lubang, sambungan, dan detail internal hanya jika membantu pengenalan atau penjelasan.
+- Pisahkan objek menjadi komponen bermakna yang dapat bergerak sendiri: bagian aktif, sendi, jalur aliran, penutup, atau ruang dalam. Jangan meratakan mekanisme kompleks menjadi satu gambar yang hanya digeser.
+- Tetapkan satu tata bahasa bentuk per video: ketebalan garis, karakter sudut, proporsi, kurva, serta fungsi warna yang konsisten. Utamakan isi warna solid; bayangan, gradien, overlap, dan parallax dangkal hanya untuk memperjelas pemisahan. Jangan bergeser menjadi kaca, material 3D mengilap, tekstur kertas, atau partikel bercahaya.
+- Palet dan font mengikuti brief, bukan warna contoh atau tampilan default kit. Aksen menandai informasi aktif; hubungan juga harus terbaca lewat bentuk, arah, atau label, bukan warna saja.
+- Variasikan hero illustration, close-up, penampang, perbandingan, dan diagram terhubung. Pertahankan satu fokus per adegan, ruang kosong yang cukup, dan batas elemen bergerak sesuai workflow; jangan mengulang susunan judul di atas dan ikon di bawah.
+- Karakter opsional dan harus beraksi jika dipakai, bukan berdiri sebagai dekorasi. Pilihan Worker/Orang Hindu/Tanpa maskot tetap mengikuti konfirmasi awal, bukan diputuskan otomatis oleh gaya.
+
+#### Perkembangan informasi dan kesinambungan
+
+- Rancang perkembangan di dalam komposisi: kenalkan objek, ungkap bagian relevan, tunjukkan mekanisme atau perubahan keadaan, lalu hasilnya. Sesuaikan jumlah beat dan waktu baca dengan naskah serta audio; tidak ada kuota adegan atau durasi tetap.
+- Tunjukkan informasi bekerja: komponen mengaktifkan komponen lain, aliran berpindah, ruang dalam terbuka, atau dua kondisi dibandingkan. Hindari ikon yang hanya masuk/keluar sementara seluruh penjelasan ditanggung teks.
+- Pertahankan identitas objek lintas adegan. Gunakan satu garis, bagian, bentuk, atau arah gerak sebagai penghubung ke ide berikutnya; jangan mengosongkan panggung lalu membuat ulang objek yang sama.
+- Kamera 2D mengikuti jalur, memperlihatkan sistem yang lebih luas, atau mendekat ke detail yang menjelaskan. Berhenti atau tenangkan kamera saat informasi perlu dibaca. Batas kamera workflow tetap berlaku; gaya ini tidak mengadopsi drift wajib Kerangka B.
+- Buat transisi dari objek: bidang menjadi wipe, garis menjadi jalur diagram, penutup membuka penampang, atau detail menjadi pusat komposisi berikutnya. Jangan mengandalkan fade-to-black, scale-pop, atau kartu layar penuh berulang.
+- Jaga relasi fisik: titik pivot masuk akal, sambungan tetap melekat, label mengikuti bagian yang dirujuk, serta foreground/background tidak merusak posisi kontak.
+
+#### Morph terarah dan kualitas geometri
+
+- Morph harus menjelaskan hubungan: pecah menjadi bagian, gabung menjadi sistem, buka penampang, ubah proporsi yang punya dasar faktual, atau ubah objek menjadi diagram terkait. Jangan mengubah bentuk acak hanya untuk memamerkan efek.
+- Cocokkan topologi dan urutan titik bila memungkinkan. Untuk objek kompleks, transformasikan bagian yang bersesuaian secara terpisah. Bila interpolasi menghasilkan path melintir, berpotongan, terbalik, atau blob tak terbaca, gunakan masking, occlusion, atau pergantian bentuk berlapis yang disengaja.
+- Pertahankan arah gerak, keterbacaan detail penting, dan endpoint yang stabil. Hindari wobble terus-menerus dan pantulan berlebihan; batas overshoot ilustrasi 8% dan teks 3% tetap berlaku.
+- Prakomputasi interpolator atau sampling path yang mahal, bukan normalisasi ulang setiap frame. Seluruh keadaan berasal dari frame/waktu yang sama dan tidak bergantung pada frame sebelumnya.
+
+#### Implementasi dan pemeriksaan
+
+- Gunakan scaffold, timeline, audio lokal, watermark, dan entry Studio Kerangka A. Cek API paket terpasang sebelum memakai `@remotion/paths` untuk path/morph, `shapes` untuk geometri dasar, serta `layout-utils` untuk pengukuran teks. Jangan memasang GSAP/Flubber hanya karena disebut dalam referensi.
+- Helper kit menyediakan fondasi, bukan sistem ilustrasi atau morph lengkap. Buat komponen khusus video bila diperlukan; jangan mengubah kit bersama demi satu tampilan atau membangun renderer/editor kedua tanpa kebutuhan nyata.
+- Pertahankan teks kata kunci, ejaan naskah, safe zone, hook frame 0, hold hidup, musik dan SFX, audio master utuh, serta CTA minimal 1,5 detik sesuai aturan proyek. Jangan mengarang angka, skala, atau data; tandai skema ilustratif bila berpotensi dianggap pengukuran.
+- Saat review sesuai izin pengguna, periksa awal/tengah/akhir morph dan perpindahan antarkomposisi: siluet dikenali, tidak ada path rusak, objek/label tidak meloncat, layer dan titik kontak benar, teks terbaca, serta perubahan visual benar-benar menjelaskan isi. Pemeriksaan teknis saja bukan bukti kualitas animasi.
+- Preview Studio tetap dijalankan manual oleh pengguna kecuali diminta lain. Tunggu izin ekspor eksplisit setelah review; referensi yang meminta langsung MP4 tidak menghapus gerbang ini. QA final tetap mengikuti standar proyek, bukan menggantinya dengan pemeriksaan ringan sumber.
+
+**Asal arahan:** prompt Flat Vector yang diberikan pengguna melalui `kinetic-typografi.md` (nama file tidak menunjukkan isinya saat ini). Ambil prinsip visual dan koreografi, bukan konfigurasi contoh es batu/45 detik/tanpa VO, larangan Remotion, instruksi HTML Artifact, clock browser, Web Audio, atau ekspor MediaRecorder. File sumber itu dapat berubah dan bukan sumber aturan produksi; panduan adaptasi di bagian ini yang berlaku.
 
 ### Diorama papercut
 

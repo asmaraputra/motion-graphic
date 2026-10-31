@@ -9,7 +9,7 @@ import {spawnSync} from 'node:child_process';
 const read = (file) => readFileSync(file, 'utf8');
 const oldRows = [
   '| Stick figure sinematik | B | Karakter stick figure, set sinematik 2D, rim light, dan gerak kamera. |',
-  '| Infografik editorial flat | A | Tipografi, ilustrasi vektor datar, diagram, dan perubahan bentuk yang menjelaskan narasi. |',
+  '| Flat Vector | A | Ilustrasi vektor datar terstruktur, diagram, morph terarah, dan transisi berbasis objek yang menjelaskan narasi. |',
   '| Diorama papercut | A | Potongan ilustrasi berlapis, bayangan lembut, dan parallax dengan rasa kertas. |',
   '| UNIDO-PPDP | A | Explainer ilustratif dengan palet adaptasi dan karakter original. |',
   '| Bedah Teknis 2.5D | A | Penampang teknis berlapis, perspektif konsisten, anotasi, dan sorotan mekanisme. |',
@@ -29,9 +29,21 @@ test('style recommendation is required and grounded in the brief narration', () 
   assert.ok(guide.includes('keluarga yang memuat rekomendasi') && guide.includes('urutan pertama'), 'grouped menus must preserve the actual recommendation');
 });
 
-test('catalog retains the five original style rows verbatim', () => {
+test('catalog retains the five original style choices with the approved Flat Vector rename', () => {
   const catalog = read('rules/visual-references.md');
   for (const row of oldRows) assert.ok(catalog.includes(row), row);
+});
+
+test('Flat Vector has one active name and an adapted production guide', () => {
+  const catalog = read('rules/visual-references.md');
+  const table = catalog.split('## Pilihan visual disetujui untuk video berikutnya')[1].split('Jika gaya belum ditentukan')[0];
+  assert.equal(table.split('\n').filter((line) => line.startsWith('| Flat Vector |')).length, 1);
+  assert.ok(!table.includes('| Infografik editorial flat |'));
+  const guide = catalog.split('### Flat Vector\n')[1].split('### Diorama papercut')[0];
+  for (const required of ['Kerangka A', 'komponen bermakna', 'Morph harus menjelaskan hubungan', 'topologi', 'masking', 'transisi', 'frame sebelumnya', 'Studio', 'izin ekspor eksplisit', 'bukan preset siap-render']) {
+    assert.ok(guide.includes(required), required);
+  }
+  assert.ok(read('rules/animate-styles.md').includes('**Motion graphic A**: Flat Vector,'));
 });
 
 test('active catalog adds all seven Animate options without duplicates', () => {
@@ -39,6 +51,19 @@ test('active catalog adds all seven Animate options without duplicates', () => {
   const rows = table.split('\n').filter((line) => line.startsWith('| ') && !line.startsWith('| Pilihan visual'));
   assert.equal(rows.length, 12);
   for (const label of labels) assert.equal(rows.filter((line) => line.startsWith(`| ${label} |`)).length, 1, label);
+});
+
+test('isometric variants preserve one catalog family and separate visual contracts', () => {
+  const catalog = read('rules/visual-references.md');
+  const table = catalog.split('## Pilihan visual disetujui untuk video berikutnya')[1].split('Jika gaya belum ditentukan')[0];
+  const row = table.split('\n').filter((line) => line.startsWith('| Animate Isometric |'));
+  assert.equal(row.length, 1);
+  for (const label of ['Minimal', 'Teknis', 'Isometric Line Art']) assert.ok(row[0].includes(label), label);
+  assert.ok(!table.includes('| Isometric Line Art |'), 'variant must not duplicate the family');
+  const guide = read('rules/animate-styles.md').split('## Animate Isometric: dua varian')[1].split('## Produksi dalam proyek ini')[0];
+  for (const required of ['### Minimal', '### Teknis (Isometric Line Art)', 'dimetrik 2:1', 'hairline konstan', 'arc length', 'hidden line', 'sumber, jalur, tujuan, dan konsekuensi', 'Three.js tidak wajib', 'lalu tunggu pilihan', 'Izin gaya bukan izin ekspor MP4']) {
+    assert.ok(guide.includes(required), required);
+  }
 });
 
 test('workflow references the full catalog rather than a stale five-option menu', () => {
