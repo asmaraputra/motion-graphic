@@ -8,11 +8,12 @@ Maskot vektor yang diadaptasi dari gambar referensi pengguna `Balinese Udeng Cha
 npx remotion studio src/videos/maskot-orang-hindu/entry.tsx
 ```
 
-Buka URL yang dicetak terminal, pilih `maskot-orang-hindu`, lalu putar atau geser timeline. Model sheet 15 detik, 1080x1920, 30 fps, tanpa audio:
+Buka URL yang dicetak terminal, pilih `maskot-orang-hindu`, lalu putar atau geser timeline. Model sheet 20 detik, 1080x1920, 30 fps, tanpa audio:
 
 - Detik 0-5: enam ekspresi.
 - Detik 5-10: menyapa, menunjuk, berpikir, tangan di pinggang, gembira, berjalan.
 - Detik 10-15: berjalan, transisi tangan, pegangan kiri, dan flip.
+- Detik 15-20: mulut bicara lewat `speak` (cue 16,1-17,5 s) dan `talk` manual.
 
 Tidak ada ekspor MP4 otomatis. Tampilan perlu persetujuan pengguna melalui Studio sebelum ekspor.
 
@@ -32,25 +33,33 @@ Import `OrangHindu` dari `src/kit/orang-hindu.tsx`, lalu pasang di dalam elemen 
 - `holdingHand`: `left` atau `right`, default `right`.
 - `flip`: membalik karakter, tetapi menjaga orientasi artwork pegangan agar tulisan tetap terbaca.
 - `colors`: override sebagian `ORANG_HINDU_COLORS`. Pertahankan ciri desain udeng saat hanya mengganti palet.
+- Mulut: dua cara. `talk` adalah angka bukaan 0..1 langsung (menang atas `speak`) — pakai hasil `useSpeechDrive` atau animasi manual. `speak` adalah daftar jendela narasi `[mulai, selesai]` detik; mulut hanya bergerak di dalam jendela, rampa masuk 0,1 s dan keluar 0,08 s, dengan flap silabis. Saat drive 0 mulut kembali menjadi senyum istirahat, bukan bentuk baru.
+- `useSpeechDrive(src)` dari `src/kit/speech.ts`: bukaan 0..1 per frame dari amplitudo file narasi (`staticFile(...)`). Butuh `@remotion/media-utils`; drive 0 sampai audio selesai didekode. Jangan dipakai pada file yang belum ada.
+- `talkFromCues`, `mouthLevel`, `blockLevel`, `loudestLevel`, `SPEECH_WINDOW` diekspor dari `orang-hindu-motion.ts` dan bisa diuji tanpa React.
 
 Contoh penggunaan nyata tersedia di `Sheet.tsx`. Aset transparan: latar krem adalah milik model sheet, bukan karakter.
+
+### Batas sinkron mulut
+
+Mulut digerakkan amplitudo, bukan fonem: bibir tidak membedakan "a" dari "o", rahang tidak ikut turun, dan tidak ada konsonan bibir. Untuk video gaya ini itu cukup — yang perlu terbaca hanyalah "karakter sedang bicara", bukan ketepatan fonetis. Jangan pakai `talk` untuk dialog dekat muka (close-up > 40% tinggi layar): di ukuran itu ketidaktepatan mulai terlihat. Jangan menambah viseme atau bentuk mulut per fonem tanpa permintaan pengguna.
 
 ## Dependensi dan batas
 
 Untuk memindahkan ke proyek lain, sertakan:
 
 - `src/kit/orang-hindu.tsx`: gambar dan API publik.
-- `src/kit/orang-hindu-motion.ts`: resolusi pose dan proporsi rig.
+- `src/kit/orang-hindu-motion.ts`: resolusi pose, proporsi rig, dan matematika mulut.
 - `src/kit/worker-motion.ts`: matematika rig yang dipakai ulang tanpa mengubah Worker.
 - `src/kit/motion.ts`: hook waktu Remotion.
+- `src/kit/speech.ts`: opsional, hanya jika memakai `useSpeechDrive`. Butuh `@remotion/media-utils`.
 
-React dan Remotion diperlukan. Tidak membutuhkan gambar eksternal, audio, jaringan, atau paket tambahan. Model sheet memakai Poppins lokal dari `brand.ts`; karakter sendiri tidak membutuhkan font. Hanya Kerangka A, jangan import ke video B atau `src/kit2d/`.
+React dan Remotion diperlukan. Karakter sendiri tidak membutuhkan gambar eksternal, audio, jaringan, font, atau paket tambahan; `talk`/`speak` murni matematika. Hanya `useSpeechDrive` yang membaca file audio lewat `@remotion/media-utils`. Model sheet memakai Poppins lokal dari `brand.ts`. Hanya Kerangka A, jangan import ke video B atau `src/kit2d/`.
 
 ## Verifikasi
 
 ```sh
 npm test
-npx eslint src/kit/orang-hindu.tsx src/kit/orang-hindu-motion.ts src/videos/maskot-orang-hindu
+npx eslint src/kit/orang-hindu.tsx src/kit/orang-hindu-motion.ts src/kit/speech.ts src/videos/maskot-orang-hindu
 npx tsc --noEmit -p src/videos/maskot-orang-hindu/tsconfig.verify.json
 ```
 

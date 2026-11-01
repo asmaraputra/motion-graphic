@@ -67,3 +67,37 @@ test('orang-hindu: controls clamp safely and wave moves continuously', () => {
   assert.ok(Math.hypot(a.right.hand[0]-b.right.hand[0],a.right.hand[1]-b.right.hand[1])<1);
   assert.notDeepEqual(a.right.hand,state(1.2,{pose:'wave'}).right.hand);
 });
+
+test('orang-hindu: cue drive opens only inside its window and ramps in and out', () => {
+  const talk = (...args) => {
+    assert.equal(typeof rig.talkFromCues, 'function', 'mouth drive from cues must exist');
+    return rig.talkFromCues(...args);
+  };
+  const cues = [[1, 1.6], [2.2, 2.9]];
+  assert.equal(talk(0.5, cues), 0);
+  assert.equal(talk(1.7, cues), 0);
+  assert.ok(talk(1.3, cues) > 0.2);
+  assert.ok(talk(1.02, cues) < talk(1.3, cues), 'entrance ramps in, never pops');
+  assert.ok(talk(1.58, cues) < talk(1.3, cues), 'exit ramps out');
+  assert.equal(talk(NaN, cues), 0);
+  // The flap must actually move: two frames a syllable apart differ.
+  assert.notEqual(talk(1.3, cues), talk(1.34, cues));
+  assert.ok([0, 1, 2].every((i) => { const v = talk(1 + i * 0.05, cues); return v >= 0 && v <= 1; }));
+});
+
+test('orang-hindu: audio drive maps silence closed and speech open', () => {
+  const {blockLevel, loudestLevel, mouthLevel} = rig;
+  assert.equal(typeof blockLevel, 'function');
+  assert.equal(typeof loudestLevel, 'function');
+  assert.equal(typeof mouthLevel, 'function');
+  const rate = 1000, samples = new Float32Array(rate * 2);
+  for (let i = rate; i < rate * 1.5; i++) samples[i] = 0.5; // 0.5 s of "speech" inside 2 s
+  const loudest = loudestLevel(samples, 80);
+  assert.ok(Math.abs(loudest - 0.5) < 1e-6);
+  assert.equal(mouthLevel(samples, rate, 0.2, loudest), 0, 'silence keeps the mouth shut');
+  assert.ok(mouthLevel(samples, rate, 1.25, loudest) > 0.8, 'speech opens the mouth');
+  assert.equal(mouthLevel(samples, rate, 1.25, 0), 0, 'no reference level means no mouth drive');
+  assert.ok(mouthLevel(samples, rate, 0.98, loudest) < mouthLevel(samples, rate, 1.25, loudest));
+  assert.equal(blockLevel(samples, 5, 5), 0, 'empty window is silence');
+  assert.ok(mouthLevel(samples, rate, NaN, loudest) >= 0);
+});

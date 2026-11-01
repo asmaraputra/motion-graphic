@@ -2,11 +2,62 @@ import {armAt, workerMotion, type WorkerArm, type WorkerMotionInput} from './wor
 
 export type OrangHinduMood = 'neutral' | 'happy' | 'sad' | 'angry' | 'surprised' | 'thinking';
 export type OrangHinduPose = 'neutral' | 'wave' | 'point' | 'think' | 'hip' | 'happy' | 'sad' | 'angry' | 'surprised' | 'walk';
+/** Inclusive start, exclusive end, in composition seconds. */
+export type SpeechCue = readonly [start: number, end: number];
+/** Analysis window for the audio-driven mouth; a syllable is roughly 80 ms. */
+export const SPEECH_WINDOW = 0.08;
 export type OrangHinduMotionInput = WorkerMotionInput & {
   pose?: OrangHinduPose;
   mood?: OrangHinduMood;
   armL?: WorkerArm;
   armR?: WorkerArm;
+  /** Explicit mouth drive 0..1; wins over `speak`. */
+  talk?: number;
+};
+
+/** Mean absolute amplitude of one window. Same measure `getWaveformSamples` uses. */
+export const blockLevel = (samples: Float32Array, start: number, end: number) => {
+  const a = Math.max(0, Math.min(samples.length, start));
+  const b = Math.max(a, Math.min(samples.length, end));
+  if (b === a) return 0;
+  let sum = 0;
+  for (let i = a; i < b; i++) sum += Math.abs(samples[i]);
+  return sum / (b - a);
+};
+
+/** Loudest window in the recording, so any voice-over level maps the same way. */
+export const loudestLevel = (samples: Float32Array, windowSamples: number) => {
+  let max = 0;
+  if (windowSamples < 1) return 0;
+  for (let i = 0; i + windowSamples <= samples.length; i += windowSamples) {
+    max = Math.max(max, blockLevel(samples, i, i + windowSamples));
+  }
+  return max;
+};
+
+/** 0..1 mouth drive from a window centred on `time`. Smoothstep between 10% and 40% of the
+ * loudest window: pauses close the mouth, vowels open it, no hard gate popping. */
+export const mouthLevel = (samples: Float32Array, sampleRate: number, time: number, loudest: number, windowSeconds = SPEECH_WINDOW) => {
+  if (!(loudest > 0)) return 0;
+  const centre = (Number.isFinite(time) ? time : 0) * sampleRate;
+  const half = (windowSeconds * sampleRate) / 2;
+  const ratio = blockLevel(samples, Math.round(centre - half), Math.round(centre + half)) / loudest;
+  const u = Math.min(1, Math.max(0, (ratio - 0.1) / 0.3));
+  return u * u * (3 - 2 * u);
+};
+
+/** Deterministic mouth drive from narration cue windows: short ramps, syllabic flap, phase per cue. */
+export const talkFromCues = (time: number, cues: readonly SpeechCue[]): number => {
+  const t = Number.isFinite(time) ? time : 0;
+  let level = 0;
+  for (const [start, end] of cues) {
+    if (t < start || t >= end) continue;
+    const ramp = Math.max(0, Math.min(1, (t - start) / 0.1, (end - t) / 0.08));
+    // Later cues run at a different phase so long videos do not look looped.
+    const flap = 0.4 + 0.6 * Math.abs(Math.sin((t - start) * 11 + start * 5.3));
+    level = Math.max(level, ramp * flap);
+  }
+  return level;
 };
 const POSES: Record<OrangHinduPose, {mood: OrangHinduMood; l: WorkerArm; r: WorkerArm}> = {
   neutral: {mood:'neutral',l:'idle',r:'idle'},

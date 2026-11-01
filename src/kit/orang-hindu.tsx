@@ -1,6 +1,6 @@
 import type {ReactNode} from 'react';
 import {useT} from './motion';
-import {orangHinduState, type OrangHinduMotionInput} from './orang-hindu-motion';
+import {orangHinduState, talkFromCues, type OrangHinduMotionInput, type SpeechCue} from './orang-hindu-motion';
 export {mixArm} from './worker-motion';
 export type {WorkerArm as OrangHinduArm} from './worker-motion';
 export type {OrangHinduMood, OrangHinduPose} from './orang-hindu-motion';
@@ -18,6 +18,8 @@ export type OrangHinduProps = OrangHinduMotionInput & {
   colors?: Partial<OrangHinduColors>;
   holding?: ReactNode;
   holdingHand?: 'left' | 'right';
+  /** Narration windows that open the mouth; ignore when `talk` is given. */
+  speak?: readonly SpeechCue[];
 };
 
 /** Reusable SVG mascot, feet=(x,y), height about 450*s. Kerangka A only.
@@ -25,12 +27,13 @@ export type OrangHinduProps = OrangHinduMotionInput & {
  * This is one character design, not a representation of all Hindu clothing.
  */
 export const OrangHindu: React.FC<OrangHinduProps> = ({x,y,s=1,flip=false,colors,holding,
-  holdingHand='right',...input}) => {
+  holdingHand='right',talk,speak,...input}) => {
   const t=useT();
   const state=orangHinduState(t,input), c={...ORANG_HINDU_COLORS,...colors};
   const {mood,left,right}=state;
   const hand=holdingHand==='left'?left.hand:right.hand;
   const [lx,ly]=state.look;
+  const drive=Math.max(0,Math.min(1,talk??talkFromCues(t,speak??[]))), speaking=drive>0;
   const brow=mood==='angry'?'M-42 -5 L-18 3 M18 3 L42 -5'
     :mood==='sad'?'M-43 -4 L-18 -13 M18 -13 L43 -4'
     :mood==='surprised'?'M-42 -19 Q-30 -27 -18 -19 M18 -19 Q30 -27 42 -19'
@@ -39,6 +42,9 @@ export const OrangHindu: React.FC<OrangHinduProps> = ({x,y,s=1,flip=false,colors
   const mouth=mood==='sad'?'M-18 47 Q0 30 18 47'
     :mood==='angry'?'M-17 42 Q0 35 17 42'
     :mood==='thinking'?'M-5 42 L17 39':'M-19 37 Q0 53 19 37';
+  // Talking mouth: lower lip is the resting smile, upper lip lifts by `drive`, so at 0 it *is* the smile.
+  // Control point is doubled for a quadratic, giving a 2x16-unit lift at full drive.
+  const talkW=19+6*drive, talkMouth=`M${-talkW} 37 Q0 53 ${talkW} 37 Q0 ${37-32*drive} ${-talkW} 37Z`;
   return <g data-orang-hindu="" data-pose={input.pose??'neutral'} data-mood={mood}
     transform={`translate(${x} ${y}) scale(${flip?-s:s} ${s})`}
     stroke={c.ink} strokeWidth={6} strokeLinecap="round" strokeLinejoin="round">
@@ -72,7 +78,9 @@ export const OrangHindu: React.FC<OrangHinduProps> = ({x,y,s=1,flip=false,colors
             </>}
           </g>
           <path d={brow} fill="none" strokeWidth={5} />
-          {mood==='surprised'?<ellipse cy={43} rx={10} ry={14} fill={c.ink} stroke="none" />
+          {speaking?<path data-orang-hindu-mouth="talk" d={talkMouth} fill={c.ink}
+            strokeWidth={5-2*Math.min(1,drive*6)} />
+            :mood==='surprised'?<ellipse cy={43} rx={10} ry={14} fill={c.ink} stroke="none" />
             :mood==='happy'?<>
               <path d="M-23 34 Q0 43 23 34 Q20 61 0 61 Q-20 61 -23 34Z" fill={c.ink} strokeWidth={3} />
               <path d="M-12 53 Q0 46 12 53" stroke={c.blush} strokeWidth={5} fill="none" />
