@@ -42,10 +42,11 @@ Jika `pull --ff-only` menolak karena kedua sisi punya commit baru, berhenti dan 
 
 ## File yang ikut dan tidak ikut
 
-- Kode, aturan proyek, katalog gaya aktif, source Animate terpin beserta lisensi, template, tes, font, dan aset produksi di `public/` ikut dilacak.
-- Folder `bahan/` berisi brief aktif (`bahan/brief.md` atau nama brief terkait), voiceover, dan bahan mentah lain. Folder ini tidak dilacak dan tidak diunggah, agar setiap folder proyek dapat mempertahankan bahan aktifnya. Aturan ignore `/brief.md` hanya menjaga kompatibilitas file lama di root, bukan lokasi input standar. Arsip brief bersama ada di `briefs/libur-sehari.md` dan `briefs/bumi-berputar-cepat.md`. Di clone baru, buat folder `bahan/` sendiri lalu salin brief atau voiceover ke sana. File voiceover yang dipakai video tetap ikut sebagai `public/videos/<slug>/narration.wav`.
+- Kode kerangka, aturan proyek, katalog gaya aktif, source Animate terpin beserta lisensi, template, font kit, dan contoh di `src/compositions/kerja12/` ikut dilacak.
+- **Video produksi tidak ikut Git.** `src/videos/<slug>/`, `public/videos/<slug>/`, dan `tests/<slug>-timeline.test.mjs` diabaikan, kecuali folder aset kerangka `contoh-2d`, `kit-papercut`, `maskot-worker`, `maskot-orang-hindu`, dan tes kit. Video baru dari `scripts/new-video.mjs` beserta narasi/musiknya tetap lokal di mesin ini; kalau perlu dipindah ke mesin lain, salin foldernya manual. Alasannya: ukuran (dua video saja sudah ~50 MB) dan tujuannya hanya berbagi kerangka.
+- Folder `bahan/` berisi brief aktif (`bahan/brief.md` atau nama brief terkait), voiceover, dan bahan mentah lain. Folder ini tidak dilacak dan tidak diunggah, agar setiap folder proyek dapat mempertahankan bahan aktifnya. Aturan ignore `/brief.md` hanya menjaga kompatibilitas file lama di root, bukan lokasi input standar. Arsip brief bersama ada di `briefs/libur-sehari.md` dan `briefs/bumi-berputar-cepat.md`. Di clone baru, buat folder `bahan/` sendiri lalu salin brief atau voiceover ke sana. Voiceover mentah tetap di `bahan/`, dan salinan produksinya di `public/videos/<slug>/` juga tidak ikut Git.
 - `node_modules/`, `build/`, `out/`, environment Python, cache, kredensial, dan `tools/` pada root tidak diunggah. `vendor/animate/tools/` tetap dilacak karena merupakan source library.
-- Media produksi ikut Git biasa, bukan Git LFS. Hindari commit ulang file audio/video besar jika tidak berubah. File yang melebihi batas GitHub perlu strategi penyimpanan tersendiri sebelum diunggah.
+- Media kit di `public/kit/` dan `public/kit2d/` ikut Git biasa, bukan Git LFS. Media produksi tidak ikut, jadi tidak perlu LFS untuk proyek ini.
 - Repo ini publik. Jangan menaruh token, data pribadi yang tidak untuk publik, atau materi berlisensi terbatas dalam commit.
 
 ## Clone di komputer baru
@@ -59,10 +60,12 @@ npm run lint
 npm run build
 ```
 
-Gunakan Node.js minimal 22.18.0. Untuk preview satu video:
+Gunakan Node.js minimal 22.18.0. Clone baru hanya berisi kerangka, jadi yang bisa langsung dijalankan adalah contoh kerangka:
 
 ```sh
-npx remotion studio src/videos/bumi-berputar/entry.tsx
+npm run studio                                              # Kerangka A: kerja12
+npx remotion studio src/videos/contoh-2d/entry.tsx          # Kerangka B
+npx remotion studio src/videos/maskot-orang-hindu/entry.tsx # model sheet maskot
 ```
 
 FFmpeg, whisper.cpp/model di `tools/`, dan environment Python audio tidak disediakan oleh Git atau `npm ci`. Siapkan sesuai `rules/VIDEO-WORKFLOW.md` bila ingin transkripsi, regenerasi audio, atau ekspor. Source Animate adalah bahan adaptasi, bukan preset Remotion siap-render. Preview pengguna dan izin ekspor tetap wajib sebelum render MP4.

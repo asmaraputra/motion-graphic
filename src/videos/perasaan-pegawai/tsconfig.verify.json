@@ -1,5 +1,0 @@
-{
-  "extends": "../../../tsconfig.json",
-  "include": ["./entry.tsx", "./Video.tsx", "./preview-entry.tsx", "../../kit2d/stage.d.ts"],
-  "exclude": []
-}

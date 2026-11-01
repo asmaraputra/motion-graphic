@@ -23,6 +23,23 @@ settings.local.json
 /brief.md
 /bahan/
 
+# Production videos and their timeline tests stay local; only the framework is shared.
+# A new video (scripts/new-video.mjs) and its public/videos/<slug>/ audio are never pushed.
+/src/videos/*
+!/src/videos/contoh-2d/
+!/src/videos/kit-papercut/
+!/src/videos/maskot-worker/
+!/src/videos/maskot-orang-hindu/
+/public/videos/*
+!/public/videos/contoh-2d/
+/tests/*
+!/tests/animate-styles.test.mjs
+!/tests/kerangka-b-story.test.mjs
+!/tests/kerja12-timeline.test.mjs
+!/tests/kit-wav.test.mjs
+!/tests/orang-hindu-motion.test.mjs
+!/tests/worker-motion.test.mjs
+
 # Generated renders, local environments and caches.
 /out/
 .venv*/

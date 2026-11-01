@@ -38,19 +38,11 @@ node scripts/render.mjs <slug> video             # out/videos/<slug>/<slug>.mp4,
 
 Kerangka B builds its soundtrack (music + SFX + ambience) with `.venv-kelindihan/Scripts/python.exe scripts/kit2d-audio/mix.py <slug>`. Kerangka A sound effects are regenerated with `scripts/make-sfx.py`. The Kerja 12 Jam example renders with `node scripts/render-kerja12.mjs stills <sec...> | video`.
 
-### Izin Bos: independent Sol remake
+### Production videos stay local
 
-`src/videos/ijin-bos-sol/` is the retained Kerangka B remake based on the working brief (historically `brief.md` at the project root; current input location: `bahan/`): twelve cinematic shots, original Canvas office/phone/paper assets, and new acting and transitions. It reuses the kit's character rig. The old `ijin-bos` source, production assets, output, and timeline test were removed after comparison; the remake keeps its own narration, music, soundtrack, and word timings. This production note records the original inputs; consult the current files in `bahan/` for available working briefs and raw audio. Production narration remains in `public/videos/ijin-bos-sol/`.
+`src/videos/<slug>/`, `public/videos/<slug>/`, and `tests/<slug>-timeline.test.mjs` are ignored by Git. Only the framework is shared: kits, templates, scripts, rules, the example in `src/compositions/kerja12/`, and the kit folders `contoh-2d`, `kit-papercut`, `maskot-worker`, `maskot-orang-hindu`. A new video made with `scripts/new-video.mjs` never pushes its scenes, narration, music, or timeline test. Keep production notes and measured loudness in `bahan/` next to the brief, which is local for the same reason.
 
-The narration and lo-fi instrumental are byte-identical copies of the approved old masters. The 99.265624-second narration includes the earlier voice replacement. Word timings reuse that master's existing local ASR result (approximately ±0.2 seconds, not forced alignment); only quoted dialogue drives mouth animation. Eleven sparse SFX are generated separately. The office, clothing, skyline, and house symbol are neutral illustrative choices, not new story facts.
-
-```sh
-npx remotion studio src/videos/ijin-bos-sol/entry.tsx --port=3117
-.venv-kelindihan/Scripts/python.exe scripts/kit2d-audio/mix.py ijin-bos-sol --no-music
-node scripts/render.mjs ijin-bos-sol stills 3.8 12 23 30 45.5 71.3 78 96
-```
-
-Studio plays the unnormalized mix. Final MP4 export is a separate, explicit step. `scripts/render.mjs` applies measured gain plus a 4x-oversampled limiter, re-measures the encoded MP4 (adjusting gain up to two more times), and prints the measured integrated loudness and true peak; check that line against -14 LUFS / -1 dBTP before publishing.
+For the same reason this README no longer lists individual productions: their folders exist only on the machine that made them.
 
 ## Layout
 
@@ -62,7 +54,7 @@ src/videos/<slug>/       One folder per video, with its own entry.tsx
 public/                  Fonts, narration, SFX (reference with staticFile(), not public/...)
 out/                     Renders and stills (ignored by Git)
 scripts/                 new-video, transcribe, render, audio tools
-tests/                   Timeline/story checks for every video (npm test)
+tests/                   Kit checks; per-video timeline tests stay local and are ignored
 ```
 
 ## Export for editors
@@ -81,7 +73,7 @@ On this machine the bundled Chrome Headless Shell was blocked from Google Fonts 
 ## Checks
 
 ```sh
-npm test       # every video's timeline/story tests
+npm test       # local kit and per-video timeline/story tests
 npm run lint   # ESLint and TypeScript
 npm run build  # bundle the default entry
 ```
