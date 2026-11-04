@@ -2,6 +2,16 @@
 
 Kerangka tetap untuk setiap video motion graphic vertikal di proyek ini. Pakai ini, jangan membangun ulang.
 
+## Tiga jenis produksi
+
+| Jenis | Bahan | Aturan |
+|---|---|---|
+| Motion graphic murni (Kerangka A) | dibuat dari nol atau dari `src/kit/` | dokumen ini |
+| Sinematik 2D stick figure (Kerangka B) | dibuat dari nol, `src/kit2d/` | `rules/KERANGKA-B.md` |
+| **YouTube Short dari paket bahan** | sudah ada di `bahan/youtube-short/<judul>/` | **`rules/YOUTUBE-SHORT.md`** & skill **`youtube-short-assembly`** |
+
+Jika pengguna memberi folder berisi `assets/`, `audio/`, dan `SCENE_MANIFEST.md`, itu YouTube Short: baca `rules/YOUTUBE-SHORT.md` dan ikuti skill `youtube-short-assembly`, jangan menggambar ulang asetnya. Paket lama di `bahan/projek1/<judul>/` tetap sah dan mengikuti aturan yang sama.
+
 ## Pilih kerangka dulu
 
 Proyek ini punya dua kerangka yang wajib terpisah:
@@ -15,7 +25,8 @@ Aturan pemilihannya ada di `rules/KERANGKA-B.md`, bagian "Kapan memakai Kerangka
 
 1. Brief/naskah (`.md`), lokasi standar `bahan/brief.md` atau file brief terkait di `bahan/` (lokal, tidak ikut Git). Cari di `bahan/` terlebih dahulu, bukan mengasumsikan `brief.md` ada di root. Path lain hanya dipakai bila pengguna menunjukkannya secara eksplisit. Jika ada beberapa kandidat tanpa pilihan yang jelas, konfirmasikan brief aktif; jika belum ada, minta pengguna menyalinnya secara manual.
 2. File voice-over (`.wav`, `.mp3`, atau format lain yang dibaca ffmpeg), disimpan di `bahan/`. Gunakan path yang sesuai nama file sebenarnya, misalnya `bahan/voiceover.wav`, bukan mengasumsikan audio ada di root. Beri path file itu ke `scripts/new-video.mjs`; salinan produksi yang dipakai video ada di `public/videos/<slug>/narration.wav`. Folder `bahan/` tidak ikut Git, jadi pull tidak menyediakan bahan mentah ini.
-3. Rules tambahan (opsional).
+3. Untuk YouTube Short, seluruh bahan ada di satu folder paket: `bahan/youtube-short/<judul>/` (atau paket lama `bahan/projek1/<judul>/`). Voice-over di `audio/`, aset di `assets/`, sumber kebenaran `SCENE_MANIFEST.md`, teks narasi `skrip-voiceover.txt`. Jangan mencari brief terpisah di `bahan/` untuk jenis ini.
+4. Rules tambahan (opsional).
 
 ## Konfirmasi awal video baru
 
@@ -35,11 +46,14 @@ Jika pengguna secara eksplisit menyerahkan keputusan tertentu kepada asisten, pi
 
 Konfirmasi ini berlaku bagi kerangka A maupun B. Default preferensi di bawah melengkapi keputusan pengguna, bukan alasan melewati pertanyaan awal yang belum terjawab.
 
+**Pengecualian YouTube Short:** kalau paketnya sudah berisi `SCENE_MANIFEST.md` + `assets/` + `audio/`, keputusan gaya, detail, bubble, dan maskot sudah ditetapkan manifest. Jangan tanyakan empat pertanyaan di atas. Yang ditanyakan hanya hal yang benar-benar belum ada di manifest, misalnya apakah subtitle boleh mengubah teks narasi, atau apakah SFX/musik diizinkan padahal section 5 tidak menyebutkannya. Ikuti `rules/YOUTUBE-SHORT.md` dan skill `youtube-short-assembly`.
+
 ## Langkah
 
 1. Baca `rules/RULES.md`, `rules/remotion-pro-rules.md`, brief, dan rules tambahan. Selesaikan bagian **Konfirmasi awal video baru** di atas sebelum langkah berikutnya; jangan mulai ulang keputusan yang sudah disetujui.
+   Untuk YouTube Short: baca `rules/YOUTUBE-SHORT.md` dan jalankan skill `youtube-short-assembly` sebagai alur utama, termasuk bagian "Skill wajib" (tujuh skill: `youtube-short-assembly`, `remotion-best-practices`, `short-form-video`, `caption-animation`, `beat-sync-editing`, `photo-slideshow`, `video-delivery-specs`). Langkah 2-5 di bawah tetap dipakai untuk scaffolding, tetapi batas scene, subtitle, dan grading mengikuti dokumen itu.
 2. Buat folder video:
-   `node scripts/new-video.mjs <slug> "bahan/<file-voiceover>"` (ganti dengan nama file sebenarnya; Kerangka A, Kerangka B memakai `--kerangka b`)
+   `node scripts/new-video.mjs <slug> "<path-ke-voiceover>"` (path sesuai nama file sebenarnya, misalnya `bahan/youtube-short/<judul>/audio/narration_<nama>.mp3` atau `bahan/<file>.wav`; Kerangka A, Kerangka B memakai `--kerangka b`)
    Hasil: `src/videos/<slug>/{entry.tsx,timeline.ts,Video.tsx}` + `public/videos/<slug>/narration.wav`. WAV PCM disalin apa adanya; format lain dikonversi otomatis ke WAV 16-bit (sample rate dan kanal asli), tanpa file sisa di root. Durasi dan jumlah frame (30 fps) dihitung dari WAV dan tercetak.
    Jika skrip menolak karena slug sudah ada, sesi sebelumnya berhenti di tengah: jangan buat slug baru. Cek progres lalu lanjutkan dari langkah yang belum selesai (`out/videos/<slug>/words.txt` ada = transkripsi selesai; `CUES`/`S`/`SFX` terisi = timeline selesai; `Video.tsx` masih berisi komentar template = adegan belum dibuat).
 3. Transkripsi lokal (audio tidak di-upload):
@@ -63,8 +77,8 @@ Konfirmasi ini berlaku bagi kerangka A maupun B. Default preferensi di bawah mel
    Tambahkan `tests/<slug>-timeline.test.mjs` (adegan menutup seluruh audio tanpa celah, cue dan SFX di dalam audio).
 6. Preview: `npx remotion studio src/videos/<slug>/entry.tsx`. Prop `showReview` menampilkan timecode + garis area aman.
 7. Cek frame kunci: `node scripts/render.mjs <slug> stills 1.5 10 20 ...` lalu lihat `out/videos/<slug>/contact.png`.
-8. Render final (hanya jika diminta): `node scripts/render.mjs <slug> video` menghasilkan `out/videos/<slug>/<slug>.mp4` (H.264 CRF 18, AAC, loudness -14 LUFS / true peak -1 dBTP) dan mencocokkan jumlah frame.
-   Pengguna minta review sendiri atau melarang render: lewati langkah 7 dan 8. Cukup `tsc`, `eslint`, dan `npm test`, lalu serahkan ke Studio.
+8. Render final: **dikerjakan pengguna, bukan agent.** Agent DILARANG menjalankan `node scripts/render.mjs <slug> video` atau perintah ekspor apa pun atas inisiatif sendiri (lihat `rules/RULES.md`, "DILARANG RENDER FINAL OTOMATIS"). Tugas agent berhenti setelah langkah 9: laporkan bahwa video siap dan sertakan perintah render untuk slug itu, lalu tunggu. Hanya izin eksplisit di percakapan ini (mis. "render sekarang") yang membolehkan agent menjalankan render; hasilnya `out/videos/<slug>/<slug>.mp4` (H.264 CRF 18, AAC, loudness -14 LUFS / true peak -1 dBTP) dan jumlah frame dicocokkan.
+   Pengguna minta review sendiri atau melarang render: lewati langkah 7, cukup `tsc`, `eslint`, dan `npm test`, lalu serahkan ke Studio. Langkah 8 tetap milik pengguna.
 9. Sebelum melapor selesai: jalankan `npm test` (semua tes, bukan hanya tes video baru), `npx tsc --noEmit`, dan `npx eslint src/videos/<slug>`. Tes gagal milik video lain: laporkan ke pengguna, jangan ubah tanpa izin. Hapus `out/videos/<slug>/still-*.png` setelah review.
 
 ## Default preferensi pengguna
@@ -99,7 +113,7 @@ Patokan praktis motion design, bukan standar resmi. Melengkapi `rules/remotion-p
 - Overshoot: ilustrasi maksimal 8%, teks kata kunci maksimal 3%.
 - Hold hidup: tidak ada frame diam total lebih dari 1 s (float 4-8 px, kedip, napas).
 - Transisi bervariasi (match cut, push, zoom ke detail, morph), jangan semua fade. Elemen yang berlanjut antaradegan (karakter, perangkat, objek utama) tetap di layar dan berubah, bukan muncul ulang.
-- Karakter (jika ada): minimal 3 ekspresi, mata berkedip, antisipasi sebelum aksi besar, squash and stretch ringan. Karakter yang sedang bicara (dialog/kutipan/instruksi langsung) wajib punya mulut bergerak: maskot Orang Hindu memakai `talk` (0..1), `speak` (jendela cue), atau `useSpeechDrive` dari `src/kit/speech.ts`. Sinkron level perkiraan cukup — tidak perlu viseme fonem. Narator tanpa dialog di layar tetap tidak perlu mulut bergerak.
+- Karakter (jika ada): minimal 3 ekspresi, mata berkedip, antisipasi sebelum aksi besar, squash and stretch ringan. Karakter yang sedang bicara (dialog/kutipan/instruksi langsung) wajib punya mulut bergerak: maskot Orang Hindu memakai `talk` (0..1), `speak` (jendela cue), atau `useSpeechDrive` dari `src/kit/speech.ts`. Sinkron level perkiraan cukup: tidak perlu viseme fonem. Narator tanpa dialog di layar tetap tidak perlu mulut bergerak.
 - Punchline: jeda 0,2-0,3 s sebelum reveal, lalu pop + SFX.
 - Kamera: push-in atau shake kecil hanya di momen puncak, maksimal 1 per 10 s.
 - Fokus: satu fokus per adegan, maksimal 3 elemen bergerak bersamaan.
@@ -123,6 +137,7 @@ Objek utama harus tetap di layar dan berubah, jadi pakai satu dunia dengan satu 
 - **Studio dijalankan manual oleh pengguna.** Jangan menjalankan server Remotion Studio, membuka preview, atau menjalankan pemeriksaan browser Studio secara otomatis. Cukup berikan perintah untuk entry/slug yang tepat agar pengguna menjalankannya sendiri. Pengecualian hanya bila pengguna secara eksplisit meminta asisten menjalankan Studio. Verifikasi tes, lint, dan typecheck tetap boleh dijalankan tanpa server; laporkan bahwa preview visual belum diperiksa bila tidak dilakukan.
 - **Gerbang review sebelum render, untuk semua video berikutnya:** setelah kode, timing, dan audio siap, berhenti di preview Studio. Beri tahu pengguna bahwa video siap dicek dan selalu sertakan perintah nyata `npx remotion studio src/videos/<slug>/entry.tsx` dengan `<slug>` diganti slug video tersebut. Jelaskan agar membuka URL yang dicetak terminal, memilih komposisi video, lalu memutar/seek untuk menilai visual dan audio.
 - **Tunggu izin ekspor setelah review.** Jangan render MP4 sampai pengguna secara eksplisit menyetujui render, misalnya “sudah cocok, render”. Permintaan awal membuat video atau persetujuan gaya/konsep/sampel tidak otomatis menjadi izin ekspor. Jika meminta revisi, perbaiki lalu kembalikan ke gerbang review yang sama.
+- **DILARANG RENDER FINAL OTOMATIS.** Setelah tes, lint, dan typecheck hijau, agent berhenti dan konfirmasi ke pengguna: sebutkan bahwa video sudah selesai, sertakan perintah `node scripts/render.mjs <slug> video`, lalu tunggu. Jangan menjalankan render final sendiri meskipun contact sheet sudah terlihat benar. Pengguna yang merender final.
 - Jika frame kunci diperlukan untuk memilih tampilan, tunjukkan sampel proporsional atau preview di Studio. Jangan melakukan full render sebagai pengganti preview pengguna.
 - Laporan akhir: timecode sinkron yang belum yakin, detail yang dikarang, loudness terukur, dan bagian yang belum ditonton/didengar.
 
