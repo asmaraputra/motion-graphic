@@ -30,12 +30,12 @@ Sebelum menampilkan pilihan, baca bagian naskah pada brief yang sebenarnya dan r
 
 Jika tool pertanyaan membatasi empat pilihan, gunakan dua tingkat, bukan menghilangkan opsi:
 
-1. **Stick figure sinematik**: pilihan B.
+1. **Stick figure**: Stick figure sinematik (Kerangka B) dan Stickman Sinematik Hangat (Kerangka A). Tanyakan gaya spesifik; jangan memilih kerangka dari nama keluarga.
 2. **Motion graphic A**: Flat Vector, Diorama papercut, UNIDO-PPDP, Bedah Teknis 2.5D, Liquid Glass. Karena lima pilihan melebihi batas empat, tanyakan secara terbuka dengan semua nama terlihat atau pecah ke subkelompok lalu minta pilihan spesifik; jangan menghilangkan satu opsi.
 3. **Animate ilustratif**: Animate Cut Paper, Animate Crosshatch, Animate Riso, Animate Sketchbook.
 4. **Animate diagram/pixel**: Animate Math, Animate Pixel, Animate Isometric.
 
-Sesudah keluarga dipilih, tanyakan gaya spesifik dalam keluarga itu bila lebih dari satu. Pemilihan keluarga belum berarti pemilihan gaya. Keputusan detail spesifik, bubble, dan maskot (Worker/Orang Hindu/Tanpa maskot, hanya Kerangka A) tetap terpisah dan tidak ditanyakan ulang jika sudah jelas. Jika pengguna menyebut gaya tertentu atau mendelegasikan desain secara eksplisit, ikuti keputusan tersebut tanpa menu ulang.
+Sesudah keluarga dipilih, tanyakan gaya spesifik dalam keluarga itu bila lebih dari satu. Pemilihan keluarga belum berarti pemilihan gaya. Keputusan detail spesifik, bubble, dan maskot (Worker/Orang Hindu/Blangkon 3D/Tanpa maskot, hanya Kerangka A) tetap terpisah dan tidak ditanyakan ulang jika sudah jelas. Jika pengguna menyebut gaya tertentu atau mendelegasikan desain secara eksplisit, ikuti keputusan tersebut tanpa menu ulang.
 
 ## Animate Cut Paper: dua varian
 
@@ -45,7 +45,7 @@ Animate Cut Paper tetap satu pilihan keluarga dengan varian **Kolase** dan **Edi
 
 - Jika pengguna hanya memilih Animate Cut Paper atau menyebut paper cut-out tanpa varian yang jelas, tampilkan Kolase dan Editorial Paper Cut-Out, rekomendasikan berdasarkan naskah, lalu tunggu pilihan. Jangan memilih atau mencampur otomatis.
 - Jika varian sudah disebut atau keputusan didelegasikan eksplisit, jangan bertanya ulang. Catat pilihan di catatan produksi video. Istilah Editorial Paper Cut-Out menunjuk varian Editorial, bukan gaya baru di luar keluarga.
-- Konfirmasi detail ilustratif, teks bubble/diegetik, dan maskot tetap terpisah. Karakter spark upstream tidak otomatis menggantikan Worker/Orang Hindu/Tanpa maskot.
+- Konfirmasi detail ilustratif, teks bubble/diegetik, dan maskot tetap terpisah. Karakter spark upstream tidak otomatis menggantikan pilihan maskot di `rules/VIDEO-WORKFLOW.md`.
 
 ### Kolase
 

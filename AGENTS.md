@@ -25,7 +25,7 @@ Proyek ini punya dua kerangka video yang wajib terpisah. Pilih kerangka sebelum 
 | Mulai | `node scripts/new-video.mjs <slug> <file-voiceover>` | `node scripts/new-video.mjs <slug> <file-voiceover> --kerangka b` |
 | Contoh | `src/compositions/kerja12/` | `src/videos/contoh-2d/` |
 
-- Brief meminta stick figure, gaya aiTrends, cerita "What if", atau tampilan sinematik gelap: pakai B. Gaya seperti video yang sudah ada: pakai A. Brief tanpa gaya: tawarkan B sebagai salah satu opsi.
+- Brief meminta stick figure tanpa referensi gaya lain, gaya aiTrends, cerita "What if", atau tampilan sinematik gelap: pakai B. Stickman Sinematik Hangat adalah pilihan A bila dipilih eksplisit. Gaya seperti video yang sudah ada: pakai A. Brief tanpa gaya: tampilkan seluruh pilihan aktif.
 - Video B tidak boleh import `src/kit/`, dan video A tidak boleh import `src/kit2d/`.
 - Slug yang sudah ada tetap di kerangkanya. Folder dengan `story.json` adalah video B.
 

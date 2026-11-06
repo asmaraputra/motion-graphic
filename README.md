@@ -4,7 +4,7 @@ Vertical 1080×1920 narrated videos built in Remotion with React + TypeScript. A
 
 ## GitHub dan sinkronisasi
 
-Repo bersama: https://github.com/asmaraputra/motion-graphic. Ikuti [panduan sinkronisasi](docs/SINKRONISASI-GITHUB.md) untuk pull, commit, dan push dari kedua folder proyek. Brief aktif berada di `bahan/brief.md` atau file brief terkait di `bahan/`, bersama voiceover mentah. Folder ini tetap lokal dan perlu disalin manual, tidak ikut pull GitHub; arsip brief bersama ada di `briefs/`. Katalog mempertahankan lima gaya lama dan tujuh tambahan Animate, lihat `rules/visual-references.md`.
+Repo bersama: https://github.com/asmaraputra/motion-graphic. Ikuti [panduan sinkronisasi](docs/SINKRONISASI-GITHUB.md) untuk pull, commit, dan push dari kedua folder proyek. Brief aktif berada di `bahan/brief.md` atau file brief terkait di `bahan/`, bersama voiceover mentah. Folder ini tetap lokal dan perlu disalin manual, tidak ikut pull GitHub; arsip brief bersama ada di `briefs/`. Katalog pilihan aktif ada di `rules/visual-references.md`; source Stickman Sinematik Hangat tersedia di `vendor/stickman/`.
 
 ## Install and preview
 
@@ -17,6 +17,16 @@ npx remotion studio src/videos/<slug>/entry.tsx  # any video made with new-video
 ```
 
 Select the composition, press Space to play/pause, and edit **Inspector → Default Props → Schema** to change its Zod-backed props live.
+
+### Stickman Sinematik Hangat 3D
+
+Kit ini memakai Kerangka A, terpisah dari stick figure Kerangka B. Untuk membuka contoh vertikal tanpa audio, jalankan:
+
+```sh
+npx remotion studio src/compositions/stickman3d-demo/entry.tsx
+```
+
+Pilih `Stickman3DDemo`. Cara membuat adegan sendiri, API, batas 2D/3D, dan aturan ekspor ada di [`rules/stickman-hangat.md`](rules/stickman-hangat.md). Persetujuan gaya atau preview bukan izin ekspor MP4.
 
 ## Two frameworks
 

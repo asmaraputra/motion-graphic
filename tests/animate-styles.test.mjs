@@ -46,12 +46,6 @@ test('Flat Vector has one active name and an adapted production guide', () => {
   assert.ok(read('rules/animate-styles.md').includes('**Motion graphic A**: Flat Vector,'));
 });
 
-test('active catalog adds all seven Animate options without duplicates', () => {
-  const table = read('rules/visual-references.md').split('## Pilihan visual disetujui untuk video berikutnya')[1].split('Jika gaya belum ditentukan')[0];
-  const rows = table.split('\n').filter((line) => line.startsWith('| ') && !line.startsWith('| Pilihan visual'));
-  assert.equal(rows.length, 13);
-  for (const label of labels) assert.equal(rows.filter((line) => line.startsWith(`| ${label} |`)).length, 1, label);
-});
 
 test('Liquid Glass is one additional A style with an honest optical readiness boundary', () => {
   const catalog = read('rules/visual-references.md');

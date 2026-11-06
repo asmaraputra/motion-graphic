@@ -69,7 +69,7 @@ Aturan main:
 
 - Baca skill pada langkah terkait, **jangan sekaligus di awal**, kecuali `youtube-short-assembly` (alur kerja) dan `remotion-best-practices` (komponen).
 - Skill adalah rujukan teknis. `SCENE_MANIFEST.md` dan dokumen ini menang bila bertentangan, terutama soal kejujuran visual dan larangan mengganti aset.
-- Skill boleh menyarankan musik, SFX, atau animasi caption yang lebih ramai. Untuk dokumenter dingin ini, tetap tunduk pada manifest: tanpa SFX/musik kecuali disebutkan, subtitle potong tanpa animasi masuk.
+- Skill boleh menyarankan musik, SFX, atau suasana yang lebih ramai. Untuk dokumenter dingin ini, tetap tunduk pada manifest: tanpa SFX/musik kecuali disebutkan. Gaya subtitle mengikuti langkah 5 (pop kata); variasi lebih ramai dari skill perlu persetujuan pengguna.
 - Jangan memasang skill baru untuk pekerjaan ini tanpa persetujuan pengguna.
 
 ## Langkah wajib
@@ -123,7 +123,7 @@ Baca `caption-animation` (timing per kata, halaman caption, tipografi 9:16) sebe
 - Satu baris per klausa napas, maksimal ~48 karakter, boleh dua baris.
 - Split baris proporsional ke jumlah karakter; jangan menggeser timing klausa.
 - Letak: dalam area aman tengah (Y: 1450-1550); jangan menabrak tombol Shorts di bawah atau judul di atas.
-- Gaya: potong (fade ~0.08 s), tanpa animasi masuk. Backing gelap tipis untuk kontras.
+- Gaya: **pop kata** (keputusan pengguna 2026-11-05, menggantikan gaya potong lama). 1-4 kata per halaman dari token word-level asli (`out/videos/<slug>/words.txt`), bukan pembagian merata kalimat. Tiap kata spring-pop dari skala ~0,6 ke 1 pada `startMs`-nya sendiri (`spring` frame-driven, misal `spring({ frame: frame - enter, fps, config: { damping: 12, mass: 0.6 } })` + `interpolate` 0,6→1). Kata aktif (kata yang `[startMs, endMs]` memuat frame saat ini) diberi satu warna aksen kuning amber `#FFE45E` atau box di belakangnya; hanya satu kata yang disorot, bukan semua warna berubah. Halaman berganti dengan fade cepat ~0,08-0,12 s. Backing gelap tipis untuk kontras tetap wajib. Semua animasi frame-driven (`useCurrentFrame`), dilarang `Date.now()`/`Math.random()`/timer; render ulang harus identik.
 - Hapus teks layar lain yang **mengulang** subtitle kata per kata. Teks kunci yang menambah informasi (tanggal, angka, label diagram) tetap.
 - Fact note (jika manifest meminta) diletakkan di atas subtitle, dengan opasitas cukup dan scrim bila latarnya terang.
 

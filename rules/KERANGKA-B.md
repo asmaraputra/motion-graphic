@@ -7,6 +7,7 @@ Kerangka A (`src/kit/`, `templates/video/`) dan Kerangka B (`src/kit2d/`, `templ
 ## Kapan memakai Kerangka B
 
 - Brief meminta stick figure, gaya aiTrends, cerita "What if", tampilan sinematik gelap, atau karakter yang memerankan narasi tanpa referensi gaya lain: pakai B. Jika pengguna secara eksplisit memilih gaya Animate atau gaya A lain, keberadaan karakter tidak otomatis berarti B; ikuti pilihan gaya dan aturan adaptasinya.
+- Jika pengguna memilih Stickman Sinematik Hangat, pakai Kerangka A dan ikuti `rules/stickman-hangat.md`; jangan campur dengan engine B.
 - Brief meminta gaya motion graphic tipografi/diagram seperti video yang sudah ada: pakai A.
 - Brief tidak menyebut gaya: ikuti konfirmasi awal di `rules/VIDEO-WORKFLOW.md`, tampilkan seluruh pilihan aktif dari `rules/visual-references.md` (termasuk stick figure sinematik/B dan tambahan Animate; pengelompokan di `rules/animate-styles.md` bila opsi tool terbatas), lalu tunggu pilihan. Jangan membatasi menu ke 2-3 opsi atau memakai preset warna B sebagai pengganti pilihan gaya.
 - Kerangka yang sudah dipakai sebuah slug tidak berubah. Slug dengan `story.json` adalah video B.

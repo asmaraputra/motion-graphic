@@ -39,6 +39,9 @@ settings.local.json
 !/tests/kit-wav.test.mjs
 !/tests/orang-hindu-motion.test.mjs
 !/tests/worker-motion.test.mjs
+!/tests/stickman3d.test.mjs
+!/tests/blangkon-3d.test.mjs
+!/tests/blangkon-gerak.test.mjs
 
 # Generated renders, local environments and caches.
 /out/

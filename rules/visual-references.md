@@ -13,11 +13,12 @@ Riset: 28 Oktober 2026. Tujuan: memperluas pilihan visual melampaui infografik f
 
 ## Pilihan visual disetujui untuk video berikutnya
 
-**Status:** Daftar aktif mempertahankan lima pilihan awal dan tujuh pilihan Animate, serta menambahkan **Liquid Glass** sebagai arah visual Kerangka A. Infografik editorial flat berganti nama menjadi **Flat Vector** atas permintaan pengguna; bukan tambahan pilihan. Semua tiga belas pilihan tetap tersedia dan tidak diterapkan ulang pada video lama.
+**Status:** Daftar aktif mempertahankan lima pilihan awal, tujuh pilihan Animate, Liquid Glass, dan Stickman Sinematik Hangat. Infografik editorial flat berganti nama menjadi **Flat Vector**; bukan tambahan pilihan. Semua empat belas pilihan tetap tersedia dan tidak diterapkan ulang pada video lama.
 
 | Pilihan visual | Kerangka | Ciri utama |
 |---|---|---|
 | Stick figure sinematik | B | Karakter stick figure, set sinematik 2D, rim light, dan gerak kamera. |
+| Stickman Sinematik Hangat | A (adaptasi) | Karakter sederhana berpakaian, suasana senja hangat, akting, interaksi properti, dan kontinuitas ruang. |
 | Flat Vector | A | Ilustrasi vektor datar terstruktur, diagram, morph terarah, dan transisi berbasis objek yang menjelaskan narasi. |
 | Diorama papercut | A | Potongan ilustrasi berlapis, bayangan lembut, dan parallax dengan rasa kertas. |
 | UNIDO-PPDP | A | Explainer ilustratif dengan palet adaptasi dan karakter original. |
@@ -33,13 +34,17 @@ Riset: 28 Oktober 2026. Tujuan: memperluas pilihan visual melampaui infografik f
 
 Jika gaya belum ditentukan, tampilkan seluruh pilihan aktif. Jika tool membatasi jumlah opsi, gunakan pengelompokan dua tingkat di `rules/animate-styles.md` agar semua nama tetap terlihat dan pilihan spesifik tidak ditebak. Wajib rekomendasikan satu gaya dari analisis bagian naskah pada brief, disertai alasan singkat dan posisi pertama pada menu terkait; jangan menyembunyikan gaya lama atau hanya menawarkan tambahan terbaru. Ikuti rincian analisis di `rules/VIDEO-WORKFLOW.md`. Gaya dan kerangka bukan hal yang sama; beberapa gaya memakai kerangka A.
 
-Pilih satu bahasa visual utama sesuai brief; jangan otomatis mencampur gaya atau menerapkannya ke video yang sudah selesai. Detail spesifik, teks bubble, dan maskot (Worker/Orang Hindu/Tanpa maskot, hanya Kerangka A) adalah pilihan terpisah dari gaya; ikuti tahap konfirmasi awal di `rules/VIDEO-WORKFLOW.md`.
+Pilih satu bahasa visual utama sesuai brief; jangan otomatis mencampur gaya atau menerapkannya ke video yang sudah selesai. Detail spesifik, teks bubble, dan maskot (Worker/Orang Hindu/Blangkon 3D/Tanpa maskot, hanya Kerangka A) adalah pilihan terpisah dari gaya; ikuti tahap konfirmasi awal di `rules/VIDEO-WORKFLOW.md`.
 
 Bagian bernomor di bawah merupakan arsip riset tambahan, bukan daftar gaya aktif atau pengganti katalog aktif di atas. Contoh sawit di arsip hanya konteks riset terdahulu, bukan permintaan revisi video sawit.
 
 ### Stick figure sinematik
 
 Pakai kerangka B sesuai `rules/KERANGKA-B.md` dan style bible-nya. Karakter, akting, pencahayaan, serta framing sinematik memimpin cerita. Jangan mencampur import kit A dan B.
+
+### Stickman Sinematik Hangat
+
+Pilihan Kerangka A yang berbeda dari stick figure sinematik Kerangka B. Karakter sederhana berpakaian beraksi dalam set flat bernuansa hangat; cahaya, kamera, dan interaksi properti mendukung cerita. Baca `rules/stickman-hangat.md` sebelum memakainya. Source upstream berada di `vendor/stickman/`; kit 3D dan contoh Remotion tersedia di `src/kit/stickman3d/` dan `src/compositions/stickman3d-demo/`.
 
 ### Flat Vector
 
@@ -54,7 +59,7 @@ Nama aktif baru untuk **Infografik editorial flat**, bukan pilihan tambahan atau
 - Tetapkan satu tata bahasa bentuk per video: ketebalan garis, karakter sudut, proporsi, kurva, serta fungsi warna yang konsisten. Utamakan isi warna solid; bayangan, gradien, overlap, dan parallax dangkal hanya untuk memperjelas pemisahan. Jangan bergeser menjadi kaca, material 3D mengilap, tekstur kertas, atau partikel bercahaya.
 - Palet dan font mengikuti brief, bukan warna contoh atau tampilan default kit. Aksen menandai informasi aktif; hubungan juga harus terbaca lewat bentuk, arah, atau label, bukan warna saja.
 - Variasikan hero illustration, close-up, penampang, perbandingan, dan diagram terhubung. Pertahankan satu fokus per adegan, ruang kosong yang cukup, dan batas elemen bergerak sesuai workflow; jangan mengulang susunan judul di atas dan ikon di bawah.
-- Karakter opsional dan harus beraksi jika dipakai, bukan berdiri sebagai dekorasi. Pilihan Worker/Orang Hindu/Tanpa maskot tetap mengikuti konfirmasi awal, bukan diputuskan otomatis oleh gaya.
+- Karakter opsional dan harus beraksi jika dipakai, bukan berdiri sebagai dekorasi. Pilihan maskot tetap mengikuti konfirmasi awal di `rules/VIDEO-WORKFLOW.md`, bukan diputuskan otomatis oleh gaya.
 
 #### Perkembangan informasi dan kesinambungan
 
