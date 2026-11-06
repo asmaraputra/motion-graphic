@@ -7,7 +7,7 @@ Pilihan visual Kerangka A, terpisah dari **Stick figure sinematik** Kerangka B. 
 - Karakter sederhana dengan kepala bulat, pakaian berwarna, ekspresi jelas, dan gerak akting. Set flat menggunakan cahaya hangat, bayangan, lapisan kedalaman, grain halus, dan kamera yang melayani cerita.
 - Palet upstream memakai ungu, coral, amber, dan teal; sesuaikan dengan brief. Pertahankan identitas karakter, proporsi, posisi, dan arah layar antarshot.
 - Aksi dibangun dalam satu ruang yang konsisten. Perhatikan pijakan kaki, jangkauan tangan, kontak dengan properti, dan urutan gerak yang masuk akal. Gunakan referensi `vendor/stickman/references/style-bible.md`, `engine.md`, dan `production.md`.
-- Karakter upstream tidak otomatis menggantikan maskot proyek. Konfirmasi Worker, Orang Hindu, Blangkon 3D, atau tanpa maskot tetap berlaku untuk Kerangka A. Terapkan desain karakter sesuai pilihan dan brief.
+- Karakter upstream tidak otomatis menggantikan maskot proyek. Konfirmasi Worker, Orang Hindu, Blangkon 2D, Blangkon 3D, atau tanpa maskot tetap berlaku untuk Kerangka A. Terapkan desain karakter sesuai pilihan dan brief.
 
 ## Integrasi dan batas
 

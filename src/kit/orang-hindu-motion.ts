@@ -35,14 +35,16 @@ export const loudestLevel = (samples: Float32Array, windowSamples: number) => {
   return max;
 };
 
-/** 0..1 mouth drive from a window centred on `time`. Smoothstep between 10% and 40% of the
- * loudest window: pauses close the mouth, vowels open it, no hard gate popping. */
-export const mouthLevel = (samples: Float32Array, sampleRate: number, time: number, loudest: number, windowSeconds = SPEECH_WINDOW) => {
+/** 0..1 mouth drive from a window centred on `time`. Smoothstep between `floor` and
+ * `floor + span` of the loudest window: pauses close the mouth, vowels open it, no hard
+ * gate popping. The defaults are the original 10%..40% range; widen `span` when a
+ * character's mouth saturates on loud narration. */
+export const mouthLevel = (samples: Float32Array, sampleRate: number, time: number, loudest: number, windowSeconds = SPEECH_WINDOW, floor = 0.1, span = 0.3) => {
   if (!(loudest > 0)) return 0;
   const centre = (Number.isFinite(time) ? time : 0) * sampleRate;
   const half = (windowSeconds * sampleRate) / 2;
   const ratio = blockLevel(samples, Math.round(centre - half), Math.round(centre + half)) / loudest;
-  const u = Math.min(1, Math.max(0, (ratio - 0.1) / 0.3));
+  const u = Math.min(1, Math.max(0, (ratio - floor) / span));
   return u * u * (3 - 2 * u);
 };
 

@@ -30,6 +30,8 @@ settings.local.json
 !/src/videos/kit-papercut/
 !/src/videos/maskot-worker/
 !/src/videos/maskot-orang-hindu/
+!/src/videos/maskot-blangkon/
+!/src/videos/blangkon-headwear/
 /public/videos/*
 !/public/videos/contoh-2d/
 /tests/*
@@ -42,6 +44,7 @@ settings.local.json
 !/tests/stickman3d.test.mjs
 !/tests/blangkon-3d.test.mjs
 !/tests/blangkon-gerak.test.mjs
+!/tests/blangkon-2d.test.mjs
 
 # Generated renders, local environments and caches.
 /out/
